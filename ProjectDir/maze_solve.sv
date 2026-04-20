@@ -1,4 +1,4 @@
-module maze_controller (
+module maze_solve(
     input  logic        clk,
     input  logic        rst_n,
 
@@ -20,19 +20,22 @@ module maze_controller (
     output logic        stp_rght
 );
 
-typedef enum logic [1:0] {
+logic [11:0] dsrd_hdng_next;
+
+typedef enum logic [2:0] {
     IDLE,
     START_MOVE,
     MOVE_UNTIL_OPN,
-    START_HEADING
+    START_HEADING,
+    TURN
 } state_t;
 
-enum [11:0] {
+enum logic [11:0] {
     NORTH = 12'h000,
     EAST  = 12'hC00,
     SOUTH = 12'h7FF,
     WEST  = 12'h3FF
-};
+} direction;
 
 state_t state, next_state;
 
@@ -47,13 +50,12 @@ end
 // Need to use a register to hold the desired heading across clock cycles
 always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) dsrd_hdng <= NORTH;
-    else dsrd_hdng <= dsrd_hdng;
+    else dsrd_hdng <= dsrd_hdng_next;
 end
-
 always_comb begin
     // Default outputs
     strt_hdng = 0;
-    dsrd_hdng = 12'b0;
+    dsrd_hdng_next = 12'b0;
     strt_mv = 0;
     stp_lft = 0;
     stp_rght = 0;
@@ -82,10 +84,10 @@ always_comb begin
                             // If right is open, turn right. Use current heading to determine new desired heading
                             if(rght_opn) begin
                             case(dsrd_hdng)
-                                NORTH: dsrd_hdng = EAST;
-                                EAST:  dsrd_hdng = SOUTH;
-                                SOUTH: dsrd_hdng = WEST;
-                                WEST:  dsrd_hdng = NORTH;
+                                NORTH: dsrd_hdng_next = EAST;
+                                EAST:  dsrd_hdng_next = SOUTH;
+                                SOUTH: dsrd_hdng_next = WEST;
+                                WEST:  dsrd_hdng_next = NORTH;
                             endcase
                             end
                         end
@@ -93,10 +95,10 @@ always_comb begin
                             // If left is open, turn left. Use current heading to determine new desired heading
                             if(lft_opn) begin
                             case(dsrd_hdng)
-                                NORTH: dsrd_hdng = WEST;
-                                EAST:  dsrd_hdng = NORTH;
-                                SOUTH: dsrd_hdng = EAST;
-                                WEST:  dsrd_hdng = SOUTH;
+                                NORTH: dsrd_hdng_next = WEST;
+                                EAST:  dsrd_hdng_next = NORTH;
+                                SOUTH: dsrd_hdng_next = EAST;
+                                WEST:  dsrd_hdng_next = SOUTH;
                             endcase
                             end
                         end
@@ -105,10 +107,10 @@ always_comb begin
                 else begin
                 case(dsrd_hdng)
                     //Turn around if both paths are blocked
-                    NORTH: dsrd_hdng = SOUTH;
-                    EAST:  dsrd_hdng = WEST;
-                    SOUTH: dsrd_hdng = NORTH;
-                    WEST:  dsrd_hdng = EAST;
+                    NORTH: dsrd_hdng_next = SOUTH;
+                    EAST:  dsrd_hdng_next = WEST;
+                    SOUTH: dsrd_hdng_next = NORTH;
+                    WEST:  dsrd_hdng_next = EAST;
                 endcase
                 end
             end 
