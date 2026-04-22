@@ -37,8 +37,8 @@ module MazeRunner_tb();
   ///////////////////////////////////////////////////////////////////////////////////////
   // Instantiate RemoteComm which models bluetooth module receiving & forwarding cmds //
   /////////////////////////////////////////////////////////////////////////////////////
-  RemoteComm iCMD(.clk(clk), .rst_n(RST_n), .RX(TX_RX), .TX(RX_TX), .cmd(cmd), .send_cmd(send_cmd),
-               .cmd_sent(cmd_sent), .resp_rdy(resp_rdy), .resp(resp));
+  RemoteComm iCMD(.clk(clk), .rst_n(RST_n), .RX(TX_RX), .TX(RX_TX), .cmd(cmd), .snd_cmd(send_cmd),
+               .cmd_snt(cmd_sent), .resp_rdy(resp_rdy), .resp(resp));
 			   
   ///////////////////////////////////////////////////
   // Instantiate physical model of robot and maze //
@@ -53,11 +53,34 @@ module MazeRunner_tb();
 
 					 
   initial begin
-
+    clk = 0;
   /// Your magic goes here ///
-
+    @(negedge clk);
+    RST_n = 0;
+    send_cmd = 0;
+    @(negedge clk);
+    RST_n = 1;
+    if(iDUT.lftPWM1 !== 0 || iDUT.lftPWM2 !== 0 || iDUT.rghtPWM1 !== 0 || iDUT.rghtPWM2 !== 0) begin
+        $display("Test failed: Motors should be stopped after reset");
+        $display("lftPWM1: %d, lftPWM2: %d, rghtPWM1: %d, rghtPWM2: %d", iDUT.lftPWM1, iDUT.lftPWM2, iDUT.rghtPWM1, iDUT.rghtPWM2);
+        $stop();
+    end
+    repeat (10000) @(posedge clk); // Wait a few cycles after reset
+    cmd = 16'h0000; // Example command to start moving forward (you should replace with actual command);
+    send_cmd = 1;
+    @(posedge clk);
+    send_cmd = 0;
+    wait(resp_rdy); // Wait for response ready
+    #100;
+    cmd = 16'h27FF; // Example command to start turning (you should replace with actual command);
+    @(negedge clk);
+    send_cmd = 1;
+    @(posedge clk);
+    send_cmd = 0;
+    wait(iDUT.strt_hdng); // Wait for response ready
+    wait(iDUT.mv_cmplt); // Wait for response ready
+    #100;
     $stop();
-	
   end
   
   always

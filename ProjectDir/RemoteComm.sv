@@ -1,8 +1,8 @@
 module RemoteComm (
     input  logic       clk,
     input  logic       rst_n,
-    input  logic       RX_TX,
-    output logic       TX_RX,
+    input  logic       RX,
+    output logic       TX,
     input logic [15:0] cmd,
     input snd_cmd,
     output logic cmd_snt,
@@ -19,7 +19,7 @@ logic trmt;
 UART_rx BLE_RECEIVE(
     .clk(clk),
     .rst_n(rst_n),
-    .RX(RX_TX), //RX of UART_rx is connected to TX_RX of wrapper
+    .RX(RX), //RX of UART_rx is connected to TX_RX of wrapper
     .rx_data(resp),
     .rdy(resp_rdy),
     .clr_rdy(1'b0) //No need to clear rdy in this design since we only expect one response per command
@@ -29,7 +29,7 @@ UART_tx BLE_TRANSMIT(
     .rst_n(rst_n),
     .tx_data(tx_data_uart_input), //Data to transmit is selected between high and low byte of cmd
     .trmt(trmt), //Transmission is triggered by snd_cmd signal
-    .tx(TX_RX), //TX of UART_tx is connected to RX_TX of wrapper
+    .tx(TX), //TX of UART_tx is connected to RX_TX of wrapper
     .tx_done(tx_done)
 );
 always_ff @(posedge clk or negedge rst_n) begin
@@ -58,7 +58,8 @@ always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) state <= IDLE;
     else state <= nxt_state;
 end
-always_comb begin
+always_comb 
+ begin
     trmt = 0;
     sel_high = 0; 
     set_cmd_snt = 0;

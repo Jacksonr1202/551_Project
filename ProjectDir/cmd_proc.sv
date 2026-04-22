@@ -95,6 +95,7 @@ always_comb begin
         CAL : begin
             in_cal = 1;
             if(cal_done) begin
+                
                 send_resp = 1;
                 next_state = IDLE;
             end
