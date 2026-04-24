@@ -4,7 +4,7 @@
 // heading of mazeRunner.  Fusion correction     //
 // comes from IR_Dtrm when en_fusion is high.   //
 /////////////////////////////////////////////////
-module inert_intf#(parameter FAST_SIM)(clk,rst_n,strt_cal,cal_done,heading,rdy,IR_Dtrm,
+module inert_intf#(parameter FAST_SIM = 0)(clk,rst_n,strt_cal,cal_done,heading,rdy,IR_Dtrm,
                   SS_n,SCLK,MOSI,MISO,INT,moving,en_fusion);
   localparam fast_sim = FAST_SIM;
   input clk, rst_n;

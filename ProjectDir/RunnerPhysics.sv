@@ -136,6 +136,7 @@ module RunnerPhysics(clk,RST_n,SS_n,SCLK,MISO,MOSI,INT,lftPWM1,lftPWM2,rghtPWM1,
 		end
 		default : begin
 		  $display("PHYS ERR: not traveling orthogonal direction");
+		  $display("PHYS ERR: heading_robot is %h",heading_robot[19:8]);
 		  ordinal_err = 12'h000;
 		end
 	  endcase

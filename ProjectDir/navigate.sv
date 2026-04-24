@@ -13,7 +13,7 @@ module navigate(clk,rst_n,strt_hdng,strt_mv,stp_lft,stp_rght,mv_cmplt,hdng_rdy,m
   output logic moving;				// enables integration in PID and in inertial_integrator
   output en_fusion;					// Only enable fusion (IR reading affect on nav) when moving forward at decent speed.
   input at_hdng;					// from PID, indicates heading close enough to consider heading complete.
-  input lft_opn,rght_opn,frwrd_opn;	// from IR sensors, indicates available direction.  Might stop at rise of lft/rght
+  input logic lft_opn,rght_opn,frwrd_opn;	// from IR sensors, indicates available direction.  Might stop at rise of lft/rght
   output reg [10:0] frwrd_spd;		// unsigned forward speed setting to PID			
 
   //Internal signals
@@ -28,7 +28,7 @@ module navigate(clk,rst_n,strt_hdng,strt_mv,stp_lft,stp_rght,mv_cmplt,hdng_rdy,m
 
   assign frwrd_inc = (FAST_SIM) ? 6'h18 : 6'h02;	// how much to increment forward speed at each step.  Adjust for faster sim.
 
-  typedef enum logic [2:0] {IDLE, HDNG, MOVE_INIT, MOVE, MV_STOP, MV_STOP_FAST} state_t; 
+  typedef enum logic [2:0] {IDLE, HDNG_INIT, HDNG, MOVE_INIT, MOVE, MV_STOP, MV_STOP_FAST} state_t; 
   state_t state, nxt_state;
 
   // Delayed versions of IR sensor inputs for edge detection
@@ -62,12 +62,16 @@ dec_frwrd_fast = 0;
   case(state)
   IDLE : begin
   if(strt_hdng) begin
-    nxt_state = HDNG;
+    nxt_state = HDNG_INIT;
   end
   else if(strt_mv) begin
     nxt_state = MOVE_INIT;
     init_frwrd = 1;
   end
+  end
+  HDNG_INIT : begin
+    moving = 1;
+    nxt_state = HDNG;
   end
   HDNG : begin
     moving = 1;

@@ -71,15 +71,32 @@ module MazeRunner_tb();
     @(posedge clk);
     send_cmd = 0;
     wait(resp_rdy); // Wait for response ready
-    #100;
+    #10000;
     cmd = 16'h27FF; // Example command to start turning (you should replace with actual command);
     @(negedge clk);
     send_cmd = 1;
     @(posedge clk);
     send_cmd = 0;
+    wait(resp_rdy); // Wait for response ready
     wait(iDUT.strt_hdng); // Wait for response ready
     wait(iDUT.mv_cmplt); // Wait for response ready
-    #100;
+    #1000;
+    cmd = 16'h4000; // Example command to stop (you should replace with actual command);
+    @(negedge clk);
+    force iDUT.frwrd_opn = 1; // Ensure forward path is open
+    @(negedge clk);
+    send_cmd = 1;
+    @(posedge clk);
+    send_cmd = 0;
+    wait(resp_rdy); // Wait for response ready
+    wait(iDUT.frwrd_spd >= 11'h2A0); // Wait for forward speed to reach cruising speed
+    #500000;
+    @(posedge clk);
+    force iDUT.frwrd_opn = 0; // Simulate obstacle detected
+    wait(iDUT.mv_cmplt); // Wait for movement to complete
+    force iDUT.frwrd_opn = 1; // Clear obstacle;
+    #1000;
+    
     $stop();
   end
   
