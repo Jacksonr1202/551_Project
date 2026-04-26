@@ -164,23 +164,37 @@ module sensor_intf(clk,rst_n,IR_lft_en,IR_cntr_en,IR_rght_en,lft_IR,
   assign lft_IR_Dtrm = (lft_IR_diff[12] & ~&lft_IR_diff[11:8]) ? 9'h100 :
                        (~lft_IR_diff[12] & |lft_IR_diff[11:8]) ? 9'h0FF :
 					   lft_IR_diff[8:0];
-  
+
   assign rght_IR_Dtrm = (rght_IR_diff[12] & ~&rght_IR_diff[11:8]) ? 9'h100 :
                         (~rght_IR_diff[12] & |rght_IR_diff[11:8]) ? 9'h0FF :
-						rght_IR_diff[8:0]; 
-						
+						rght_IR_diff[8:0];
+
+  ///////////////////////////////////////////////////////////////
+  // Pipeline lft/rght IR_Dtrm so the two cascaded subtractors //
+  // (sub_158 then sub_175) live on opposite sides of a flop. //
+  /////////////////////////////////////////////////////////////
+  reg signed [8:0] lft_IR_Dtrm_q, rght_IR_Dtrm_q;
+  always_ff @(posedge clk, negedge rst_n)
+    if (!rst_n) begin
+      lft_IR_Dtrm_q  <= 9'sd0;
+      rght_IR_Dtrm_q <= 9'sd0;
+    end else begin
+      lft_IR_Dtrm_q  <= lft_IR_Dtrm;
+      rght_IR_Dtrm_q <= rght_IR_Dtrm;
+    end
+
   ///////////////////////////////////////////////////////////////
   // Calculate fusion correction factor based off IR readings //
-  ///////////////////////////////////////////////////////////// 
-  assign IR_Dtrm_sum = {lft_IR_Dtrm[8],lft_IR_Dtrm} - {rght_IR_Dtrm[8],rght_IR_Dtrm};
+  /////////////////////////////////////////////////////////////
+  assign IR_Dtrm_sum = {lft_IR_Dtrm_q[8],lft_IR_Dtrm_q} - {rght_IR_Dtrm_q[8],rght_IR_Dtrm_q};
 
   /////////////////////////////////////////////////////
   // Need to pipeline (flop) IR_Dtrm for timing reasons //
   ///////////////////////////////////////////////////////
   always_ff @(posedge clk)
     IR_Dtrm = ((lft_opn) && (rght_opn)) ? 9'h000 :		// if no IR run with no fusion
-              (lft_opn) ? ~{rght_IR_Dtrm[8],rght_IR_Dtrm[8:1]} :				// based on right if left is bad
-	      (rght_opn) ? {lft_IR_Dtrm[8],lft_IR_Dtrm[8:1]} :				// based on lft if rght is bad
+              (lft_opn) ? ~{rght_IR_Dtrm_q[8],rght_IR_Dtrm_q[8:1]} :				// based on right if left is bad
+	      (rght_opn) ? {lft_IR_Dtrm_q[8],lft_IR_Dtrm_q[8:1]} :				// based on lft if rght is bad
 	      IR_Dtrm_sum[9:1];
 						  
   ///////////////////////////

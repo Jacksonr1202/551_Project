@@ -48,7 +48,16 @@ always_comb begin
         D_diff_sat = D_diff[7:0];
 end
 
-//signed multiply
-assign D_term = D_diff_sat * D_COEFF;
+//signed multiply - registered to break the long combinational chain
+//(err_sat -> sub_40 -> saturation -> mult_52) that was feeding straight into PID's add.
+logic signed [12:0] D_term_nxt;
+assign D_term_nxt = D_diff_sat * D_COEFF;
+
+always_ff @(posedge clk, negedge rst_n) begin
+    if (!rst_n)
+        D_term <= 13'sd0;
+    else
+        D_term <= D_term_nxt;
+end
 
 endmodule

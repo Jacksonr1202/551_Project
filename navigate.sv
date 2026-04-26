@@ -11,7 +11,7 @@ module navigate(clk,rst_n,strt_hdng,strt_mv,stp_lft,stp_rght,mv_cmplt,hdng_rdy,m
   input hdng_rdy;					// new heading reading ready....used to pace frwrd_spd increments
   output logic mv_cmplt;			// asserted when heading or forward move complete
   output logic moving;				// enables integration in PID and in inertial_integrator
-  output en_fusion;					// Only enable fusion (IR reading affect on nav) when moving forward at decent speed.
+  output reg en_fusion;				// Only enable fusion (IR reading affect on nav) when moving forward at decent speed. Registered to break combinational path into iNEMO/iINT.
   input at_hdng;					// from PID, indicates heading close enough to consider heading complete.
   input logic lft_opn,rght_opn,frwrd_opn;	// from IR sensors, indicates available direction.  Might stop at rise of lft/rght
   output reg [10:0] frwrd_spd;		// unsigned forward speed setting to PID			
@@ -140,6 +140,11 @@ always_ff @(posedge clk, negedge rst_n) begin
 end
 
 //Assert en_fusion if frwrd_spd is greater than 1/2 max speed, allowing IR readings to affect nav decisions only when moving at decent speed.
-assign en_fusion = (frwrd_spd > (MAX_FRWRD >> 1)) ? 1 : 0;
+//Registered to break the frwrd_spd -> en_fusion -> iINT/yaw_corr combinational path through the module boundary.
+always_ff @(posedge clk, negedge rst_n)
+  if (!rst_n)
+    en_fusion <= 1'b0;
+  else
+    en_fusion <= (frwrd_spd > (MAX_FRWRD >> 1));
 endmodule
   
