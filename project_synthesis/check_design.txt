@@ -1,0 +1,20 @@
+ 
+****************************************
+check_design summary:
+Version:     X-2025.06
+Date:        Sun Apr 26 22:30:01 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      6
+    Constant outputs (LINT-52)                                      6
+--------------------------------------------------------------------------------
+
+Warning: In design 'MazeRunner', output port 'LED[6]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'MazeRunner', output port 'LED[5]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'MazeRunner', output port 'LED[4]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'MazeRunner', output port 'LED[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'MazeRunner', output port 'LED[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'MazeRunner', output port 'LED[1]' is connected directly to 'logic 0'. (LINT-52)
+1

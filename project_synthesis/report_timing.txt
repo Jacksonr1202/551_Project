@@ -6,15 +6,15 @@ Report : timing
         -max_paths 1
 Design : MazeRunner
 Version: X-2025.06
-Date   : Sun Apr 26 13:59:21 2026
+Date   : Sun Apr 26 20:03:50 2026
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: iNEMO/iINT/yaw_int_reg[21]
+  Startpoint: iIR/rght_IR_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: iMTR/rght_spd_q_reg[11]
+  Endpoint: iMTR/rPWM/PWM2_reg
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -27,51 +27,112 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  iNEMO/iINT/yaw_int_reg[21]/CLK (DFFARX1_RVT)            0.00       0.00 r
-  iNEMO/iINT/yaw_int_reg[21]/QN (DFFARX1_RVT)             0.10       0.10 r
-  U73/Y (INVX0_RVT)                                       0.04       0.14 f
-  iCNTRL/sub_30/U106/Y (OR2X2_RVT)                        0.08       0.22 f
-  iCNTRL/sub_30/U101/Y (NAND2X0_RVT)                      0.07       0.29 r
-  iCNTRL/sub_30/U97/Y (AND2X1_RVT)                        0.06       0.35 r
-  iCNTRL/sub_30/U96/Y (OA22X1_RVT)                        0.07       0.43 r
-  iCNTRL/sub_30/U94/Y (NAND4X0_RVT)                       0.07       0.50 f
-  U87/Y (XOR3X2_RVT)                                      0.10       0.60 f
-  U64/Y (INVX0_RVT)                                       0.05       0.65 r
-  U63/Y (AO21X1_RVT)                                      0.07       0.72 r
-  U57/Y (AO21X1_RVT)                                      0.09       0.81 r
-  iCNTRL/U46/Y (XOR2X2_RVT)                               0.13       0.94 f
-  iCNTRL/add_1_root_add_52_2/U1_1/CO (FADDX1_RVT)         0.11       1.05 f
-  iCNTRL/add_1_root_add_52_2/U1_2/CO (FADDX1_RVT)         0.11       1.16 f
-  iCNTRL/add_1_root_add_52_2/U1_3/CO (FADDX1_RVT)         0.11       1.27 f
-  iCNTRL/add_1_root_add_52_2/U1_4/CO (FADDX1_RVT)         0.11       1.38 f
-  iCNTRL/add_1_root_add_52_2/U1_5/S (FADDX1_RVT)          0.17       1.55 r
-  iCNTRL/add_0_root_add_52_2/U1_5/CO (FADDX1_RVT)         0.13       1.68 r
-  iCNTRL/add_0_root_add_52_2/U1_6/S (FADDX1_RVT)          0.17       1.85 f
-  iCNTRL/sub_59/U11/Y (INVX1_RVT)                         0.06       1.91 r
-  iCNTRL/sub_59/U2_3/CO (FADDX1_RVT)                      0.13       2.03 r
-  iCNTRL/sub_59/U2_4/CO (FADDX1_RVT)                      0.12       2.15 r
-  iCNTRL/sub_59/U2_5/CO (FADDX1_RVT)                      0.12       2.27 r
-  iCNTRL/sub_59/U2_6/CO (FADDX1_RVT)                      0.12       2.38 r
-  iCNTRL/sub_59/U2_7/CO (FADDX1_RVT)                      0.12       2.50 r
-  iCNTRL/sub_59/U2_8/CO (FADDX1_RVT)                      0.12       2.62 r
-  iCNTRL/sub_59/U2_9/CO (FADDX1_RVT)                      0.12       2.73 r
-  iCNTRL/sub_59/U2_10/CO (FADDX1_RVT)                     0.12       2.85 r
-  U54/Y (XNOR2X2_RVT)                                     0.12       2.97 r
-  iCNTRL/U96/Y (AND2X1_RVT)                               0.06       3.03 r
-  iMTR/rght_spd_q_reg[11]/D (DFFARX1_RVT)                 0.01       3.04 r
-  data arrival time                                                  3.04
+  iIR/rght_IR_reg[2]/CLK (DFFARX2_RVT)                    0.00       0.00 r
+  iIR/rght_IR_reg[2]/QN (DFFARX2_RVT)                     0.11       0.11 r
+  U276/Y (NBUFFX2_RVT)                                    0.06       0.18 r
+  iIR_adj/sub_23/U9/Y (NAND2X0_RVT)                       0.04       0.22 f
+  iIR_adj/sub_23/U10/Y (NAND2X0_RVT)                      0.05       0.27 r
+  U283/Y (OR3X1_RVT)                                      0.08       0.35 r
+  iIR_adj/sub_23/U20/Y (NAND4X0_RVT)                      0.06       0.41 f
+  iIR_adj/sub_23/U21/Y (NAND3X0_RVT)                      0.07       0.48 r
+  iIR_adj/sub_23/U40/Y (XOR2X2_RVT)                       0.12       0.60 f
+  iIR_adj/U151/Y (OA21X1_RVT)                             0.08       0.68 f
+  iIR_adj/U54/Y (AND2X1_RVT)                              0.06       0.74 f
+  iIR_adj/U53/Y (NAND2X0_RVT)                             0.04       0.78 r
+  iIR_adj/U52/Y (NAND2X0_RVT)                             0.04       0.83 f
+  iIR_adj/U44/Y (AO22X1_RVT)                              0.07       0.90 f
+  U214/Y (NAND2X0_RVT)                                    0.06       0.96 r
+  iIR_adj/U219/Y (NAND3X0_RVT)                            0.06       1.02 f
+  iIR_adj/U98/Y (AND2X1_RVT)                              0.07       1.09 f
+  iIR_adj/U97/Y (XOR3X2_RVT)                              0.07       1.16 f
+  iIR_adj/U220/Y (AND2X1_RVT)                             0.08       1.24 f
+  iIR_adj/add_35/U110/Y (OR2X1_RVT)                       0.07       1.30 f
+  iIR_adj/add_35/U88/Y (NAND2X0_RVT)                      0.05       1.35 r
+  iIR_adj/add_35/U68/Y (AND2X1_RVT)                       0.07       1.41 r
+  iIR_adj/add_35/U25/Y (NAND2X0_RVT)                      0.04       1.46 f
+  iIR_adj/add_35/U14/Y (AOI21X1_RVT)                      0.10       1.56 r
+  iIR_adj/add_35/U13/Y (OA21X1_RVT)                       0.07       1.63 r
+  iIR_adj/add_35/U12/Y (MUX21X2_RVT)                      0.12       1.75 f
+  iIR_adj/U36/Y (NBUFFX2_RVT)                             0.07       1.82 f
+  iIR_adj/U33/Y (NAND2X0_RVT)                             0.06       1.88 r
+  U204/Y (AO21X1_RVT)                                     0.09       1.97 r
+  iCNTRL/sub_30/U23/Y (AND2X1_RVT)                        0.07       2.04 r
+  iCNTRL/sub_30/U17/Y (AO21X1_RVT)                        0.05       2.10 r
+  iCNTRL/sub_30/U15/Y (NAND3X0_RVT)                       0.05       2.15 f
+  iCNTRL/sub_30/U16/Y (NAND4X0_RVT)                       0.06       2.21 r
+  iCNTRL/sub_30/U14/Y (NAND4X0_RVT)                       0.08       2.29 f
+  iCNTRL/sub_30/U42/Y (XOR3X2_RVT)                        0.11       2.40 r
+  iCNTRL/U14/Y (NAND2X0_RVT)                              0.06       2.47 f
+  iCNTRL/U15/Y (NAND2X0_RVT)                              0.08       2.55 r
+  iCNTRL/U19/Y (AO22X1_RVT)                               0.11       2.66 r
+  U100/Y (OR2X1_RVT)                                      0.08       2.74 r
+  iCNTRL/iDterm/sub_40/U33/Y (AND2X1_RVT)                 0.07       2.80 r
+  iCNTRL/iDterm/sub_40/U66/Y (AND2X1_RVT)                 0.06       2.87 r
+  iCNTRL/iDterm/sub_40/U37/Y (NAND2X0_RVT)                0.05       2.91 f
+  iCNTRL/iDterm/sub_40/U50/Y (INVX0_RVT)                  0.05       2.96 r
+  iCNTRL/iDterm/sub_40/U107/Y (NAND3X0_RVT)               0.05       3.01 f
+  iCNTRL/iDterm/sub_40/U103/Y (NAND2X0_RVT)               0.07       3.07 r
+  iCNTRL/iDterm/sub_40/U91/Y (XOR2X2_RVT)                 0.13       3.20 f
+  iCNTRL/iDterm/U26/Y (NAND2X0_RVT)                       0.06       3.26 r
+  iCNTRL/iDterm/U12/Y (AND3X1_RVT)                        0.09       3.35 r
+  iCNTRL/iDterm/mult_52/U37/Y (AND2X1_RVT)                0.08       3.43 r
+  iCNTRL/iDterm/mult_52/U48/Y (NAND2X0_RVT)               0.06       3.48 f
+  iCNTRL/iDterm/mult_52/U43/Y (INVX0_RVT)                 0.05       3.54 r
+  U150/Y (AO21X1_RVT)                                     0.06       3.60 r
+  iCNTRL/iDterm/mult_52/U35/Y (NBUFFX2_RVT)               0.07       3.67 r
+  iCNTRL/iDterm/mult_52/U32/CO (FADDX1_RVT)               0.12       3.79 r
+  iCNTRL/iDterm/mult_52/U33/Y (AO22X1_RVT)                0.07       3.86 r
+  iCNTRL/iDterm/mult_52/U25/Y (AO22X1_RVT)                0.07       3.94 r
+  iCNTRL/iDterm/mult_52/U55/Y (AO22X1_RVT)                0.08       4.01 r
+  iCNTRL/iDterm/mult_52/U20/Y (XOR2X2_RVT)                0.13       4.14 f
+  U169/Y (XOR2X2_RVT)                                     0.13       4.27 r
+  iCNTRL/iDterm/mult_52/U29/Y (XOR2X2_RVT)                0.12       4.40 f
+  U173/Y (XOR3X2_RVT)                                     0.17       4.57 f
+  U118/Y (MUX21X2_RVT)                                    0.10       4.67 f
+  U199/Y (XOR2X2_RVT)                                     0.12       4.79 r
+  U254/Y (AND2X1_RVT)                                     0.07       4.86 r
+  iMTR/mult_29/U35/Y (AND2X1_RVT)                         0.07       4.93 r
+  iMTR/mult_29/S2_5_8/S (FADDX1_RVT)                      0.18       5.11 f
+  iMTR/mult_29/S2_6_7/S (FADDX1_RVT)                      0.17       5.28 r
+  iMTR/mult_29/S2_7_6/S (FADDX1_RVT)                      0.16       5.44 f
+  iMTR/mult_29/S2_8_5/S (FADDX1_RVT)                      0.17       5.61 r
+  iMTR/mult_29/S2_9_4/S (FADDX1_RVT)                      0.16       5.77 f
+  iMTR/mult_29/S2_10_3/S (FADDX1_RVT)                     0.17       5.95 r
+  iMTR/mult_29/S4_2/S (FADDX1_RVT)                        0.17       6.11 f
+  U243/Y (XOR2X2_RVT)                                     0.13       6.24 r
+  iMTR/mult_29/FS_1/U36/Y (NAND2X0_RVT)                   0.04       6.29 f
+  iMTR/mult_29/FS_1/U17/Y (AND3X1_RVT)                    0.07       6.36 f
+  iMTR/mult_29/FS_1/U16/Y (NAND2X0_RVT)                   0.05       6.40 r
+  iMTR/mult_29/FS_1/U15/Y (NAND4X0_RVT)                   0.07       6.47 f
+  iMTR/mult_29/FS_1/U10/Y (NAND3X0_RVT)                   0.07       6.54 r
+  iMTR/mult_29/FS_1/U9/Y (XOR2X2_RVT)                     0.14       6.68 f
+  U115/Y (INVX0_RVT)                                      0.05       6.73 r
+  iMTR/U42/Y (INVX0_RVT)                                  0.04       6.77 f
+  U228/Y (NBUFFX2_RVT)                                    0.06       6.83 f
+  iMTR/U85/Y (OA221X1_RVT)                                0.11       6.93 f
+  U224/Y (NAND3X0_RVT)                                    0.06       6.99 r
+  U223/Y (XOR2X2_RVT)                                     0.13       7.13 f
+  U221/Y (NAND2X0_RVT)                                    0.07       7.20 r
+  U220/Y (XNOR2X1_RVT)                                    0.12       7.31 f
+  iMTR/rPWM/U57/Y (OA21X1_RVT)                            0.07       7.39 f
+  iMTR/rPWM/U24/Y (NAND2X0_RVT)                           0.04       7.43 r
+  iMTR/rPWM/U23/Y (NAND2X0_RVT)                           0.04       7.47 f
+  iMTR/rPWM/U22/Y (NAND2X0_RVT)                           0.05       7.52 r
+  iMTR/rPWM/U8/Y (NAND3X0_RVT)                            0.05       7.57 f
+  iMTR/rPWM/PWM2_reg/D (DFFARX1_RVT)                      0.01       7.58 f
+  data arrival time                                                  7.58
 
   clock clk (rise edge)                                   2.75       2.75
   clock network delay (ideal)                             0.00       2.75
   clock uncertainty                                      -0.12       2.62
-  iMTR/rght_spd_q_reg[11]/CLK (DFFARX1_RVT)               0.00       2.62 r
-  library setup time                                     -0.06       2.57
-  data required time                                                 2.57
+  iMTR/rPWM/PWM2_reg/CLK (DFFARX1_RVT)                    0.00       2.62 r
+  library setup time                                     -0.06       2.56
+  data required time                                                 2.56
   --------------------------------------------------------------------------
-  data required time                                                 2.57
-  data arrival time                                                 -3.04
+  data required time                                                 2.56
+  data arrival time                                                 -7.58
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.47
+  slack (VIOLATED)                                                  -5.02
 
 
 1
