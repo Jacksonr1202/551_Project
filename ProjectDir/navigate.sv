@@ -60,6 +60,7 @@ init_frwrd = 0;
 inc_frwrd = 0;
 dec_frwrd = 0;
 dec_frwrd_fast = 0;
+nxt_state = state;
   case(state)
   IDLE : begin
   if(strt_hdng) begin
@@ -150,4 +151,5 @@ end
 //Assert en_fusion if frwrd_spd is greater than 1/2 max speed, allowing IR readings to affect nav decisions only when moving at decent speed.
 assign en_fusion = (frwrd_spd > (MAX_FRWRD >> 1)) ? 1 : 0;
 endmodule
+  
   

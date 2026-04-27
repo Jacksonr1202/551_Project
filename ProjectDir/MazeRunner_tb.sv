@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module MazeRunner_tb();
   
   reg clk,RST_n;
@@ -54,7 +56,7 @@ module MazeRunner_tb();
 					 
   initial begin
     //Monitor relevant signals
-    $monitor("Time: %0t | cmd: %h | resp: %h | lftPWM: %b%b | rghtPWM: %b%b | hall_n: %b | strt_hdng: %b | strt_mv: %b | mv_cmplt: %b", $time, cmd, resp, lftPWM1, lftPWM2, rghtPWM1, rghtPWM2, hall_n, iDUT.strt_hdng, iDUT.strt_mv, iDUT.mv_cmplt);
+    $monitor("Time: %0t | cmd: %h | resp: %h | lftPWM: %b%b | rghtPWM: %b%b | strt_hdng: %b | strt_mv: %b | mv_cmplt: %b", $time, cmd, resp, lftPWM1, lftPWM2, rghtPWM1, rghtPWM2, iDUT.strt_hdng, iDUT.strt_mv, iDUT.mv_cmplt);
     clk = 0;
   /// Your magic goes here ///
     @(negedge clk);
@@ -96,9 +98,10 @@ module MazeRunner_tb();
     @(posedge clk);
     force iDUT.frwrd_opn = 0; // Simulate obstacle detected
     wait(iDUT.mv_cmplt); // Wait for movement to complete
-    force iDUT.frwrd_opn = 1; // Clear obstacle;
+     #1000;
+    cmd = 16'h
+    cmd = 16'
     #1000;
-    
     $stop();
   end
   

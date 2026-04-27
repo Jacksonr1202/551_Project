@@ -72,7 +72,7 @@ always_comb begin
             end
         end
         EXECUTE : begin
-            casex(cmd[15:13])
+            case(cmd[15:13])
                 3'b000 : begin
                     strt_cal = 1;
                     next_state = CAL;
@@ -90,6 +90,7 @@ always_comb begin
                     cmd_md = 0;
                     if(sol_cmplt) next_state = IDLE;
                 end
+                default: next_state = IDLE;
             endcase
         end
         CAL : begin

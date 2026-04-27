@@ -7,7 +7,7 @@
 
 `timescale 1ns/1ps
 
-module Real_MazeRunner_tb();
+module MazeRunner_synth_regression_tb();
   localparam int CLK_HALF_NS       = 5;
   localparam int BOOT_CYCLES       = 20000;
   localparam int UART_TIMEOUT      = 2500000;

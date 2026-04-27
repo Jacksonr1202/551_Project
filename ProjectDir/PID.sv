@@ -1,14 +1,14 @@
 module PID(clk, rst_n, moving, dsrd_hdng, actl_hdng, hdng_vld, frwrd_spd, at_hdng, lft_spd, rght_spd);
 //declare input/output
-input clk, rst_n;
-input moving;
-input [11:0] dsrd_hdng;
-input [11:0] actl_hdng;
-input hdng_vld;
-input [10:0] frwrd_spd;
+input logic clk, rst_n;
+input logic moving;
+input logic signed [11:0] dsrd_hdng;
+input logic signed [11:0] actl_hdng;
+input logic hdng_vld;
+input logic [10:0] frwrd_spd;
 output logic at_hdng;
-output logic [11:0] lft_spd;
-output logic [11:0] rght_spd;
+output logic signed [11:0] lft_spd;
+output logic signed [11:0] rght_spd;
 
 //declare internal variables
 logic signed [13:0] P_term;

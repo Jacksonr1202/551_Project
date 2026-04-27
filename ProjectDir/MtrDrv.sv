@@ -1,21 +1,21 @@
 module MtrDrv(
-    input clk,
-    input rst_n,
-    input [11:0] rght_spd,
-    input [11:0] lft_spd,
-    input [11:0] vbatt,
-    output lftPWM1,
-    output lftPWM2,
-    output rghtPWM1,
-    output rghtPWM2
+    input logic clk,
+    input logic rst_n,
+    input logic signed[11:0] rght_spd,
+    input logic signed[11:0] lft_spd,
+    input logic [11:0] vbatt,
+    output logic lftPWM1,
+    output logic lftPWM2,
+    output logic rghtPWM1,
+    output logic rghtPWM2
 );
 
 //internal signals
-logic [12:0] scale_factor;
-logic [23:0] lft_prod;
-logic [23:0] rght_prod;
-logic [11:0] lft_scaled;
-logic [11:0] rght_scaled;
+logic signed [12:0] scale_factor;
+logic signed [23:0] lft_prod;
+logic signed [23:0] rght_prod;
+logic signed [11:0] lft_scaled;
+logic signed [11:0] rght_scaled;
 logic [11:0] lft_final;
 logic [11:0] rght_final;
 
