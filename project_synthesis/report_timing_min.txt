@@ -1,3 +1,4 @@
+Warning: Design 'MazeRunner' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : timing
@@ -6,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : MazeRunner
 Version: X-2025.06
-Date   : Sun Apr 26 22:30:01 2026
+Date   : Mon Apr 27 16:41:46 2026
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c

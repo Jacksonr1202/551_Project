@@ -1,6 +1,7 @@
 set TOP MazeRunner
 set SRC_DIR ./ProjectDir
 
+
 remove_design -all
 
 set target_library [list ./saed32lvt_tt0p85v25c.db]
@@ -17,6 +18,16 @@ set non_synth {
     RunnerPhysics.sv
     RemoteComm.sv
     navigate_tb_starter.sv
+    piezo_drv_tv.sv
+    inert_intf_tb.sv
+    cmd_proc_tb.sv
+    SPI_iNEMO4.sv
+    SPI_ADC128S.sv
+    MazeRunner_tb.sv
+    IR_Math_tb.sv
+    ADC128S_FC.sv
+    A2D_intf.sv
+    MazeRunner_synth_regression_tb.sv
 }
 
 foreach f $file_list {
@@ -42,7 +53,7 @@ current_design $TOP
 link
 check_design > check_design_precompile.txt
 
-create_clock -name clk -period 2.5 -waveform {0 1.25} [get_ports clk]
+create_clock -name clk -period 2.75 -waveform {0 1.25} [get_ports clk]
 set_dont_touch_network [get_ports clk]
 set_clock_uncertainty 0.125 [get_clocks clk]
 
