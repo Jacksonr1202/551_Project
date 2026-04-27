@@ -1,0 +1,13 @@
+BEGIN 1:MazeRunner:fast:work
+    mv_cmplt :  1:MazeRunner_tb:fast:work
+    at_hdng :  1:MazeRunner_tb:fast:work
+    strt_hdng :  1:MazeRunner_tb:fast:work
+    rght_spd :  1:MazeRunner_tb:fast:work
+    moving :  1:MazeRunner_tb:fast:work
+    dsrd_hdng_adj :  1:MazeRunner_tb:fast:work
+    lft_spd :  1:MazeRunner_tb:fast:work
+    dsrd_hdng :  1:MazeRunner_tb:fast:work
+    actl_hdng :  1:MazeRunner_tb:fast:work
+    frwrd_opn :  1:MazeRunner_tb:fast:work
+    frwrd_spd :  1:MazeRunner_tb:fast:work
+END 

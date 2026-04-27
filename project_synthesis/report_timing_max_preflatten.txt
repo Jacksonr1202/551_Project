@@ -6,13 +6,13 @@ Report : timing
         -max_paths 1
 Design : MazeRunner
 Version: X-2025.06
-Date   : Sun Apr 26 22:29:59 2026
+Date   : Mon Apr 27 14:51:05 2026
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: iNAV/frwrd_spd_reg[3]
+  Startpoint: iNEMO/iINT/yaw_int_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: iNEMO/iINT/yaw_int_reg[26]
             (rising edge-triggered flip-flop clocked by clk)
@@ -22,86 +22,80 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   MazeRunner         16000                 saed32lvt_tt0p85v25c
-  navigate_FAST_SIM1 8000                  saed32lvt_tt0p85v25c
-  inert_intf_FAST_SIM1
-                     8000                  saed32lvt_tt0p85v25c
   inertial_integrator_FAST_SIM1
                      8000                  saed32lvt_tt0p85v25c
-  inertial_integrator_FAST_SIM1_DW01_add_1_DW01_add_18
+  inertial_integrator_FAST_SIM1_DW01_add_2_DW01_add_19
                      ForQA                 saed32lvt_tt0p85v25c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  iNAV/frwrd_spd_reg[3]/CLK (DFFARX1_LVT)                 0.00       0.00 r
-  iNAV/frwrd_spd_reg[3]/QN (DFFARX1_LVT)                  0.06       0.06 f
-  iNAV/U106/Y (NAND4X0_LVT)                               0.05       0.11 r
-  iNAV/U87/Y (AO21X1_LVT)                                 0.06       0.17 r
-  iNAV/U86/Y (AO21X1_LVT)                                 0.05       0.22 r
-  iNAV/U85/Y (NAND2X0_LVT)                                0.03       0.25 f
-  iNAV/U84/Y (NAND3X0_LVT)                                0.04       0.28 r
-  iNAV/en_fusion (navigate_FAST_SIM1)                     0.00       0.28 r
-  U45/Y (INVX0_LVT)                                       0.02       0.31 f
-  U44/Y (INVX0_LVT)                                       0.03       0.34 r
-  iNEMO/en_fusion (inert_intf_FAST_SIM1)                  0.00       0.34 r
-  iNEMO/U63/Y (NBUFFX2_LVT)                               0.04       0.38 r
-  iNEMO/iINT/en_fusion (inertial_integrator_FAST_SIM1)
-                                                          0.00       0.38 r
-  iNEMO/iINT/U10/Y (AND2X1_LVT)                           0.05       0.42 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/A[4] (inertial_integrator_FAST_SIM1_DW01_add_1_DW01_add_18)
-                                                          0.00       0.42 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U4/Y (AND2X1_LVT)
-                                                          0.05       0.47 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_5/CO (FADDX1_LVT)
-                                                          0.08       0.55 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_6/CO (FADDX1_LVT)
-                                                          0.08       0.64 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_7/CO (FADDX1_LVT)
-                                                          0.08       0.72 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_8/CO (FADDX1_LVT)
-                                                          0.08       0.80 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_9/CO (FADDX1_LVT)
-                                                          0.08       0.89 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_10/CO (FADDX1_LVT)
-                                                          0.08       0.97 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_11/CO (FADDX1_LVT)
-                                                          0.08       1.05 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_12/CO (FADDX1_LVT)
-                                                          0.08       1.14 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_13/CO (FADDX1_LVT)
-                                                          0.08       1.22 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_14/CO (FADDX1_LVT)
-                                                          0.08       1.30 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_15/CO (FADDX1_LVT)
-                                                          0.08       1.38 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_16/CO (FADDX1_LVT)
-                                                          0.08       1.47 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_17/CO (FADDX1_LVT)
-                                                          0.08       1.55 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_18/CO (FADDX1_LVT)
-                                                          0.08       1.63 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_19/CO (FADDX1_LVT)
-                                                          0.08       1.72 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_20/CO (FADDX1_LVT)
-                                                          0.08       1.80 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_21/CO (FADDX1_LVT)
-                                                          0.08       1.88 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_22/CO (FADDX1_LVT)
-                                                          0.08       1.97 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_23/CO (FADDX1_LVT)
-                                                          0.08       2.05 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_24/CO (FADDX1_LVT)
-                                                          0.08       2.13 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_25/CO (FADDX1_LVT)
-                                                          0.08       2.22 r
-  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_26/Y (XOR3X1_LVT)
-                                                          0.06       2.28 r
+  iNEMO/iINT/yaw_int_reg[2]/CLK (DFFARX1_LVT)             0.00       0.00 r
+  iNEMO/iINT/yaw_int_reg[2]/Q (DFFARX1_LVT)               0.10       0.10 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/A[2] (inertial_integrator_FAST_SIM1_DW01_add_2_DW01_add_19)
+                                                          0.00       0.10 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U2/Y (AND2X1_LVT)
+                                                          0.05       0.15 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_3/CO (FADDX1_LVT)
+                                                          0.08       0.23 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_4/CO (FADDX1_LVT)
+                                                          0.08       0.31 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_5/CO (FADDX1_LVT)
+                                                          0.08       0.40 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_6/CO (FADDX1_LVT)
+                                                          0.08       0.48 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_7/CO (FADDX1_LVT)
+                                                          0.08       0.56 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_8/CO (FADDX1_LVT)
+                                                          0.08       0.65 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_9/CO (FADDX1_LVT)
+                                                          0.08       0.73 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_10/CO (FADDX1_LVT)
+                                                          0.08       0.81 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_11/CO (FADDX1_LVT)
+                                                          0.08       0.90 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_12/CO (FADDX1_LVT)
+                                                          0.08       0.98 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_13/CO (FADDX1_LVT)
+                                                          0.08       1.06 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_14/CO (FADDX1_LVT)
+                                                          0.08       1.15 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_15/CO (FADDX1_LVT)
+                                                          0.08       1.23 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_16/CO (FADDX1_LVT)
+                                                          0.08       1.31 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_17/CO (FADDX1_LVT)
+                                                          0.08       1.40 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_18/CO (FADDX1_LVT)
+                                                          0.08       1.48 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_19/CO (FADDX1_LVT)
+                                                          0.08       1.56 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_20/CO (FADDX1_LVT)
+                                                          0.08       1.65 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_21/CO (FADDX1_LVT)
+                                                          0.08       1.73 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_22/CO (FADDX1_LVT)
+                                                          0.08       1.81 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_23/CO (FADDX1_LVT)
+                                                          0.08       1.90 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_24/CO (FADDX1_LVT)
+                                                          0.08       1.98 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_25/CO (FADDX1_LVT)
+                                                          0.08       2.06 r
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/U1_26/S (FADDX1_LVT)
+                                                          0.11       2.17 f
+  iNEMO/iINT/add_1_root_add_0_root_add_188_2/SUM[26] (inertial_integrator_FAST_SIM1_DW01_add_2_DW01_add_19)
+                                                          0.00       2.17 f
+  iNEMO/iINT/add_0_root_add_0_root_add_188_2/B[26] (inertial_integrator_FAST_SIM1_DW01_add_1_DW01_add_18)
+                                                          0.00       2.17 f
+  iNEMO/iINT/add_0_root_add_0_root_add_188_2/U1_26/Y (XOR3X2_LVT)
+                                                          0.11       2.28 r
   iNEMO/iINT/add_0_root_add_0_root_add_188_2/SUM[26] (inertial_integrator_FAST_SIM1_DW01_add_1_DW01_add_18)
                                                           0.00       2.28 r
   iNEMO/iINT/U91/Y (AO22X1_LVT)                           0.06       2.33 r
-  iNEMO/iINT/yaw_int_reg[26]/D (DFFARX1_LVT)              0.01       2.35 r
-  data arrival time                                                  2.35
+  iNEMO/iINT/yaw_int_reg[26]/D (DFFARX1_LVT)              0.01       2.34 r
+  data arrival time                                                  2.34
 
   clock clk (rise edge)                                   2.50       2.50
   clock network delay (ideal)                             0.00       2.50
@@ -111,7 +105,7 @@ Wire Load Model Mode: enclosed
   data required time                                                 2.35
   --------------------------------------------------------------------------
   data required time                                                 2.35
-  data arrival time                                                 -2.35
+  data arrival time                                                 -2.34
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 

@@ -1,0 +1,10 @@
+BEGIN 1:MazeRunner:fast:work
+    frwrd_opn :  1:MazeRunner_tb:fast:work
+    frwrd_spd :  1:MazeRunner_tb:fast:work
+    lftPWM1 :  1:MazeRunner_tb:fast:work
+    lftPWM2 :  1:MazeRunner_tb:fast:work
+    rghtPWM1 :  1:MazeRunner_tb:fast:work
+    rghtPWM2 :  1:MazeRunner_tb:fast:work
+    strt_hdng :  1:MazeRunner_tb:fast:work
+    mv_cmplt :  1:MazeRunner_tb:fast:work
+END 

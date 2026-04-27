@@ -1,176 +1,199 @@
+# //  Questa Sim
+# //  Version 2024.3_2 linux Nov 25 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+project open /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ece551finalPostsynth
+# Loading project ece551finalPostsynth
+vsim work.MazeRunner_tb -t ns +notimingchecks -voptargs=+acc -L /filespace/a/ashebani/ECE551/SAED32_lib
+# vsim work.MazeRunner_tb -t ns "+notimingchecks" -voptargs="+acc" -L /filespace/a/ashebani/ECE551/SAED32_lib 
+# Start time: 11:45:31 on Apr 27,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.MazeRunner_tb(fast)
+# Loading work.MazeRunner(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO22X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.INVX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NBUFFX2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.INVX2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.INVX0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFARX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OR2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NAND2X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OR3X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NAND4X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NAND3X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND3X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO221X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OA22X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR2X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFASX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XNOR2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XOR2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.HADDX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AOI22X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OA221X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND4X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OA21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR3X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OAI21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFARX2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.LATCHX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OAI221X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR4X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND2X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AOI21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO222X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NAND3X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OR4X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NBUFFX4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND2X4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFX2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.FADDX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XOR3X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO222X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XOR3X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OAI22X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.MUX21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OAI21X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.IBUFFX4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XNOR3X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XOR2X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR2X4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO21X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OA222X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.INVX4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AOI222X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR4X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR2X2_LVT(fast)
+# Loading work.RemoteComm(fast)
+# Loading work.UART_rx(fast)
+# Loading work.UART_tx(fast)
+# Loading work.RunnerPhysics(fast)
+# Loading work.SPI_iNEMO4(fast)
+# Loading work.inverse_PWM12e(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+add wave -position insertpoint  \
+sim:/MazeRunner_tb/iPHYS/omega_lft \
+sim:/MazeRunner_tb/iPHYS/omega_rght \
+sim:/MazeRunner_tb/iPHYS/omega_sum
+add wave -position insertpoint  \
+sim:/MazeRunner_tb/iPHYS/heading_v \
+sim:/MazeRunner_tb/iPHYS/heading_robot
+add wave -position insertpoint  \
+sim:/MazeRunner_tb/iCMD/cmd
+add wave -position insertpoint  \
+sim:/MazeRunner_tb/iDUT/mv_cmplt \
+sim:/MazeRunner_tb/iDUT/strt_mv
+run -all
+# Causality operation skipped due to absence of debug database file
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Compile of MazeRunner.vg was successful.
+# Compile of MazeRunner_tb.sv was successful.
+# Compile of RemoteComm.sv was successful.
 # Compile of A2D_intf.sv was successful.
 # Compile of ADC128S_FC.sv was successful.
-# Compile of cmd_proc.sv was successful.
-# Compile of cmd_proc_tb.sv was successful.
-# Compile of Dterm.sv was successful.
-# Compile of DutyScaleROM.sv was successful.
-# Compile of I_term.sv was successful.
-# Compile of inert_intf.sv was successful.
-# Compile of inert_intf_tb.sv was successful.
-# Compile of inertial_integrator.sv was successful.
-# Compile of IR_Math.sv was successful.
-# Compile of IR_Math_tb.sv was successful.
-# Compile of maze_solve.sv failed with 16 errors.
-# Compile of MazeRunner.sv was successful.
-# Compile of MazeRunner_tb.sv was successful.
-# Compile of MtrDrv.sv was successful.
-# Compile of navigate.sv was successful.
-# Compile of navigate_tb_starter.sv was successful.
-# Compile of PID.sv was successful with warnings.
-# Compile of piezo_drv.sv was successful.
-# Compile of piezo_drv_tb.sv was successful.
-# Compile of PWM8.sv was successful.
-# Compile of PWM12.sv was successful.
-# Compile of reset_synch.sv was successful.
 # Compile of RunnerPhysics.sv was successful with warnings.
-# Compile of sensor_intf.sv was successful with warnings.
 # Compile of SPI_ADC128S.sv was successful.
 # Compile of SPI_iNEMO4.sv was successful.
-# Compile of SPI_main.sv was successful.
 # Compile of UART_rx.sv was successful.
 # Compile of UART_tx.sv was successful.
-# Compile of UART_wrapper.sv was successful.
-# 32 compiles, 1 failed with 16 errors.
-# Compile of maze_solve.sv failed with 2 errors.
-# Compile of maze_solve.sv failed with 1 errors.
-# Compile of maze_solve.sv was successful with warnings.
-# Compile of maze_solve.sv was successful.
-vsim -gui work.MazeRunner_tb
-# vsim -gui work.MazeRunner_tb 
-# Start time: 12:48:18 on Apr 20,2026
+# 10 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+# Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
-# Loading work.MazeRunner_tb
-# Loading work.MazeRunner
-# Loading work.reset_synch
-# Loading work.UART_wrapper
-# Loading work.UART_rx
-# Loading work.UART_tx
-# Loading work.cmd_proc
-# ** Error: (vsim-3033) Instantiation of 'maze_solve' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iDUT File: C:/ECE 551/551_Project/ProjectDir/MazeRunner.sv Line: 84
-#         Searched libraries:
-#             C:/ECE 551/551_Project/ProjectDir/work
-# Loading work.navigate
-# Loading work.inert_intf
-# Loading work.SPI_main
-# Loading work.inertial_integrator
-# Loading work.IR_math
-# Loading work.PID
-# Loading work.I_term
-# Loading work.Dterm
-# Loading work.MtrDrv
-# Loading work.DutyScaleROM
-# Loading work.PWM12
-# Loading work.sensor_intf
-# Loading work.A2D_intf
-# Loading work.PWM8
-# Loading work.piezo_drv
-# ** Error: (vsim-3033) Instantiation of 'RemoteComm' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb File: C:/ECE 551/551_Project/ProjectDir/MazeRunner_tb.sv Line: 40
-#         Searched libraries:
-#             C:/ECE 551/551_Project/ProjectDir/work
-# Loading work.RunnerPhysics
-# Loading work.SPI_iNEMO4
-# Loading work.inverse_PWM12e
-# Loading work.ADC128S_FC
-# Loading work.SPI_ADC128S
-# Error loading design
-# End time: 12:48:19 on Apr 20,2026, Elapsed time: 0:00:01
-# Errors: 2, Warnings: 9
-vsim -gui work.MazeRunner_tb
-# vsim -gui work.MazeRunner_tb 
-# Start time: 12:50:03 on Apr 20,2026
-# Loading sv_std.std
-# Loading work.MazeRunner_tb
-# Loading work.MazeRunner
-# Loading work.reset_synch
-# Loading work.UART_wrapper
-# Loading work.UART_rx
-# Loading work.UART_tx
-# Loading work.cmd_proc
-# ** Error: (vsim-3033) Instantiation of 'maze_solve' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iDUT File: C:/ECE 551/551_Project/ProjectDir/MazeRunner.sv Line: 84
-#         Searched libraries:
-#             C:/ECE 551/551_Project/ProjectDir/work
-# Loading work.navigate
-# Loading work.inert_intf
-# Loading work.SPI_main
-# Loading work.inertial_integrator
-# Loading work.IR_math
-# Loading work.PID
-# Loading work.I_term
-# Loading work.Dterm
-# Loading work.MtrDrv
-# Loading work.DutyScaleROM
-# Loading work.PWM12
-# Loading work.sensor_intf
-# Loading work.A2D_intf
-# Loading work.PWM8
-# Loading work.piezo_drv
-# ** Error: (vsim-3033) Instantiation of 'RemoteComm' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb File: C:/ECE 551/551_Project/ProjectDir/MazeRunner_tb.sv Line: 40
-#         Searched libraries:
-#             C:/ECE 551/551_Project/ProjectDir/work
-# Loading work.RunnerPhysics
-# Loading work.SPI_iNEMO4
-# Loading work.inverse_PWM12e
-# Loading work.ADC128S_FC
-# Loading work.SPI_ADC128S
-# Error loading design
-# End time: 12:50:04 on Apr 20,2026, Elapsed time: 0:00:01
-# Errors: 2, Warnings: 1
-# Compile of maze_solve.sv was successful.
-# Compile of RemoteComm.sv was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.MazeRunner_tb
-# vsim -gui work.MazeRunner_tb 
-# Start time: 12:50:41 on Apr 20,2026
-# Loading sv_std.std
-# Loading work.MazeRunner_tb
-# Loading work.MazeRunner
-# Loading work.reset_synch
-# Loading work.UART_wrapper
-# Loading work.UART_rx
-# Loading work.UART_tx
-# Loading work.cmd_proc
-# Loading work.maze_solve
-# Loading work.navigate
-# Loading work.inert_intf
-# Loading work.SPI_main
-# Loading work.inertial_integrator
-# Loading work.IR_math
-# Loading work.PID
-# Loading work.I_term
-# Loading work.Dterm
-# Loading work.MtrDrv
-# Loading work.DutyScaleROM
-# Loading work.PWM12
-# Loading work.sensor_intf
-# Loading work.A2D_intf
-# Loading work.PWM8
-# Loading work.piezo_drv
-# Loading work.RemoteComm
-# Loading work.RunnerPhysics
-# Loading work.SPI_iNEMO4
-# Loading work.inverse_PWM12e
-# Loading work.ADC128S_FC
-# Loading work.SPI_ADC128S
-# ** Error (suppressible): (vsim-3389) Port 'clk' not found in the connected module (1st connection).
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iDUT/iIR_adj File: C:/ECE 551/551_Project/ProjectDir/MazeRunner.sv Line: 128
-# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (12) for port 'vbatt'. The port definition is at: C:/ECE 551/551_Project/ProjectDir/MtrDrv.sv(6).
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iDUT/iMTR File: C:/ECE 551/551_Project/ProjectDir/MazeRunner.sv Line: 143
-# ** Error: (vsim-3063) Port 'rspns' not found in the connected module (9th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iDUT/iIR/iA2D/iSPI File: C:/ECE 551/551_Project/ProjectDir/A2D_intf.sv Line: 80
-# ** Error: (vsim-3063) Port 'cmd' not found in the connected module (10th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iDUT/iIR/iA2D/iSPI File: C:/ECE 551/551_Project/ProjectDir/A2D_intf.sv Line: 80
-# ** Error: (vsim-3063) Port 'RX' not found in the connected module (3rd connection).
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iCMD File: C:/ECE 551/551_Project/ProjectDir/MazeRunner_tb.sv Line: 40
-# ** Error: (vsim-3063) Port 'TX' not found in the connected module (4th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iCMD File: C:/ECE 551/551_Project/ProjectDir/MazeRunner_tb.sv Line: 40
-# ** Error: (vsim-3063) Port 'send_cmd' not found in the connected module (6th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iCMD File: C:/ECE 551/551_Project/ProjectDir/MazeRunner_tb.sv Line: 40
-# ** Error: (vsim-3063) Port 'cmd_sent' not found in the connected module (7th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /MazeRunner_tb/iCMD File: C:/ECE 551/551_Project/ProjectDir/MazeRunner_tb.sv Line: 40
-# Error loading design
-# End time: 12:50:42 on Apr 20,2026, Elapsed time: 0:00:01
-# Errors: 7, Warnings: 4
+# Loading work.MazeRunner_tb(fast)
+# Loading work.MazeRunner(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO22X1_LVT(fast)
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'MazeRunner_tb' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ns  Iteration: 0  Instance: /MazeRunner_tb/iDUT/U6 File: /filespace/e/ejhoffman/ece551/lib_create/saed32nm_lvt.v
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.INVX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NBUFFX2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.INVX2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.INVX0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFARX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OR2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NAND2X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OR3X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NAND4X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NAND3X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND3X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO221X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OA22X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR2X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFASX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XNOR2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XOR2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.HADDX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AOI22X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OA221X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND4X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OA21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR3X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OAI21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFARX2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.LATCHX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OAI221X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR4X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND2X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AOI21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO222X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NAND3X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OR4X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NBUFFX4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AND2X4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFX2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.FADDX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.DFFX1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XOR3X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO222X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR2X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XOR3X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OAI22X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.MUX21X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OAI21X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.IBUFFX4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XNOR3X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.XOR2X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR2X4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AO21X2_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.OA222X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.INVX4_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.AOI222X1_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR4X0_LVT(fast)
+# Loading /filespace/a/ashebani/ECE551/SAED32_lib.NOR2X2_LVT(fast)
+# Loading work.RemoteComm(fast)
+# Loading work.UART_rx(fast)
+# Loading work.UART_tx(fast)
+# Loading work.RunnerPhysics(fast)
+# Loading work.SPI_iNEMO4(fast)
+# Loading work.inverse_PWM12e(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# End time: 12:03:07 on Apr 27,2026, Elapsed time: 0:17:36
+# Errors: 1, Warnings: 2

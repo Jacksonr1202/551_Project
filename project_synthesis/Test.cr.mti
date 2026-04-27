@@ -1,0 +1,207 @@
+/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_main.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_main.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module SPI_main
+
+Top level modules:
+	SPI_main
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RemoteComm.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RemoteComm.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module RemoteComm
+
+Top level modules:
+	RemoteComm
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_ADC128S.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_ADC128S.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module SPI_ADC128S
+
+Top level modules:
+	SPI_ADC128S
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_wrapper.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_wrapper.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module UART_wrapper
+
+Top level modules:
+	UART_wrapper
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM8.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM8.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module PWM8
+
+Top level modules:
+	PWM8
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/Dterm.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/Dterm.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module Dterm
+
+Top level modules:
+	Dterm
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/IR_Math.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/IR_Math.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module IR_math
+
+Top level modules:
+	IR_math
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RunnerPhysics.sv {2 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RunnerPhysics.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module RunnerPhysics
+** Warning: /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RunnerPhysics.sv(223): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+-- Compiling module inverse_PWM12e
+
+Top level modules:
+	RunnerPhysics
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PID.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PID.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module PID
+
+Top level modules:
+	PID
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/maze_solve.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/maze_solve.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module maze_solve
+
+Top level modules:
+	maze_solve
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inertial_integrator.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inertial_integrator.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module inertial_integrator
+
+Top level modules:
+	inertial_integrator
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb2.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb2.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module MazeRunner_tb
+
+Top level modules:
+	MazeRunner_tb
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/ADC128S_FC.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/ADC128S_FC.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module ADC128S_FC
+
+Top level modules:
+	ADC128S_FC
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM12.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM12.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module PWM12
+
+Top level modules:
+	PWM12
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_iNEMO4.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_iNEMO4.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module SPI_iNEMO4
+
+Top level modules:
+	SPI_iNEMO4
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/I_term.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/I_term.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module I_term
+
+Top level modules:
+	I_term
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inert_intf.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inert_intf.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module inert_intf
+
+Top level modules:
+	inert_intf
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/piezo_drv.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/piezo_drv.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module piezo_drv
+
+Top level modules:
+	piezo_drv
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/sensor_intf.sv {2 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/sensor_intf.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module sensor_intf
+** Warning: /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/sensor_intf.sv(123): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	sensor_intf
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/DutyScaleROM.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/DutyScaleROM.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module DutyScaleROM
+
+Top level modules:
+	DutyScaleROM
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module MazeRunner_tb
+
+Top level modules:
+	MazeRunner_tb
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_rx.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_rx.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module UART_rx
+
+Top level modules:
+	UART_rx
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/cmd_proc.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/cmd_proc.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module cmd_proc
+
+Top level modules:
+	cmd_proc
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/A2D_intf.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/A2D_intf.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module A2D_intf
+
+Top level modules:
+	A2D_intf
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MtrDrv.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MtrDrv.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module MtrDrv
+
+Top level modules:
+	MtrDrv
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/reset_synch.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/reset_synch.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module reset_synch
+
+Top level modules:
+	reset_synch
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_tx.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_tx.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module UART_tx
+
+Top level modules:
+	UART_tx
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module MazeRunner
+
+Top level modules:
+	MazeRunner
+
+} {} {}} /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/navigate.sv {1 {vlog -work work -vopt -sv -stats=none /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/navigate.sv
+QuestaSim vlog 2024.3_2 Compiler 2024.11 Nov 25 2024
+-- Compiling module navigate
+
+Top level modules:
+	navigate
+
+} {} {}}

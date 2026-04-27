@@ -2,7 +2,7 @@
 ****************************************
 check_design summary:
 Version:     X-2025.06
-Date:        Sun Apr 26 22:29:40 2026
+Date:        Mon Apr 27 14:50:53 2026
 ****************************************
 
                    Name                                            Total
@@ -12,8 +12,8 @@ Inputs/Outputs                                                     27
     Shorted outputs (LINT-31)                                      13
     Constant outputs (LINT-52)                                      7
 
-Cells                                                              73
-    Cells do not drive (LINT-1)                                    32
+Cells                                                              74
+    Cells do not drive (LINT-1)                                    33
     Connected to power or ground (LINT-32)                         35
     Nets connected to multiple pins on same cell (LINT-33)          6
 
@@ -21,10 +21,11 @@ Nets                                                               13
     Unloaded nets (LINT-2)                                         13
 --------------------------------------------------------------------------------
 
-Warning: In design 'navigate_FAST_SIM1', cell 'C339' does not drive any nets. (LINT-1)
-Warning: In design 'navigate_FAST_SIM1', cell 'C343' does not drive any nets. (LINT-1)
-Warning: In design 'navigate_FAST_SIM1', cell 'C347' does not drive any nets. (LINT-1)
-Warning: In design 'navigate_FAST_SIM1', cell 'C353' does not drive any nets. (LINT-1)
+Warning: In design 'navigate_FAST_SIM1', cell 'C381' does not drive any nets. (LINT-1)
+Warning: In design 'navigate_FAST_SIM1', cell 'C385' does not drive any nets. (LINT-1)
+Warning: In design 'navigate_FAST_SIM1', cell 'C389' does not drive any nets. (LINT-1)
+Warning: In design 'navigate_FAST_SIM1', cell 'C395' does not drive any nets. (LINT-1)
+Warning: In design 'navigate_FAST_SIM1', cell 'C404' does not drive any nets. (LINT-1)
 Warning: In design 'inert_intf_FAST_SIM1', cell 'B_10' does not drive any nets. (LINT-1)
 Warning: In design 'IR_math_900', cell 'B_6' does not drive any nets. (LINT-1)
 Warning: In design 'IR_math_900', cell 'B_7' does not drive any nets. (LINT-1)

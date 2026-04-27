@@ -3,7 +3,7 @@
 Report : area
 Design : MazeRunner
 Version: X-2025.06
-Date   : Sun Apr 26 22:29:59 2026
+Date   : Mon Apr 27 14:51:05 2026
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,20 +12,20 @@ Library(s) Used:
     saed32lvt_tt0p85v25c (File: /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/saed32lvt_tt0p85v25c.db)
 
 Number of ports:                         2234
-Number of nets:                          7161
-Number of cells:                         4535
-Number of combinational cells:           3632
-Number of sequential cells:               780
+Number of nets:                          7141
+Number of cells:                         4509
+Number of combinational cells:           3605
+Number of sequential cells:               781
 Number of macros/black boxes:               0
-Number of buf/inv:                        662
+Number of buf/inv:                        649
 Number of references:                      17
 
-Combinational area:               9648.576957
-Buf/Inv area:                      906.277511
-Noncombinational area:            5502.217704
+Combinational area:               9591.394554
+Buf/Inv area:                      894.586887
+Noncombinational area:            5516.958056
 Macro/Black Box area:                0.000000
-Net Interconnect area:            2969.183511
+Net Interconnect area:            2976.642184
 
-Total cell area:                 15150.794660
-Total area:                      18119.978171
+Total cell area:                 15108.352610
+Total area:                      18084.994794
 1

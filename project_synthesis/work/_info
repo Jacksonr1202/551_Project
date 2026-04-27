@@ -1,0 +1,834 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+Z1 !s12c _opt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+!s11f vlog 2024.3_2 2024.11, Nov 25 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis
+T_opt
+!s110 1777319080
+VPIRY3A:bK4280d9RP7Ndl1
+Z3 04 13 4 work MazeRunner_tb fast 0
+=17-000ae431a4f1-69efbca8-6317f-7c355
+R0
+Z4 !s12f OEM100
+Z5 !s12b OEM100
+Z6 !s124 OEM100
+Z7 !s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L /filespace/a/ashebani/ECE551/SAED32_lib +acc
+Z8 tCvgOpt 0
+n@_opt
+Z9 OE;O;2024.3_2;79
+R2
+T_opt1
+!s110 1777320102
+V<W0ANR5L;fPLA>NN=4M]z0
+R3
+=1-000ae431a4f1-69efc0a6-299be-94b60
+R0
+R4
+R5
+R6
+R7
+o-quiet -auto_acc_if_foreign -work work
+R8
+n@_opt1
+R9
+vA2D_intf
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/A2D_intf.sv
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z11 !s110 1777320069
+!i10b 1
+!s100 n@Mf[j^PLFmKDKmNzR?860
+IPDNibCo6[h5K[Y?ST^gAT0
+S1
+R2
+Z12 w1777218214
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/A2D_intf.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/A2D_intf.sv
+!i122 672
+L0 1 85
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OE;L;2024.3_2;79
+r1
+!s85 0
+31
+Z15 !s108 1777320069.000000
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/A2D_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/A2D_intf.sv|
+!i113 0
+Z16 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+n@a2@d_intf
+vADC128S_FC
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/ADC128S_FC.sv
+R10
+R11
+!i10b 1
+!s100 RbWH89FETlJBko;>AX0NK1
+Iigm@Ih4K9QcWZ@cnNk7d72
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/ADC128S_FC.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/ADC128S_FC.sv
+!i122 673
+L0 1 111
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/ADC128S_FC.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/ADC128S_FC.sv|
+!i113 0
+R16
+R8
+n@a@d@c128@s_@f@c
+vcmd_proc
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/cmd_proc.sv
+R10
+R11
+!i10b 1
+!s100 UfzHkV_AWK4o`k6@JAocU0
+IOeY1DSc9F5ZQWRQzcSg3?0
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/cmd_proc.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/cmd_proc.sv
+!i122 674
+L0 1 116
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/cmd_proc.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/cmd_proc.sv|
+!i113 0
+R16
+R8
+vDterm
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/Dterm.sv
+R10
+R11
+!i10b 1
+!s100 cdOP]laK[^H^X=AW1lYX40
+I^HjU>]0PA87<JdD?g=[_z1
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/Dterm.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/Dterm.sv
+!i122 675
+L0 1 54
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/Dterm.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/Dterm.sv|
+!i113 0
+R16
+R8
+n@dterm
+vDutyScaleROM
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/DutyScaleROM.sv
+R10
+R11
+!i10b 1
+!s100 foSLQBIO7]1]76YnD^<P63
+ID1zK0Ho9fL2z7o9ZHof?=0
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/DutyScaleROM.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/DutyScaleROM.sv
+!i122 676
+L0 1 81
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/DutyScaleROM.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/DutyScaleROM.sv|
+!i113 0
+R16
+R8
+n@duty@scale@r@o@m
+vI_term
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/I_term.sv
+R10
+R11
+!i10b 1
+!s100 f>jXblo74`QzWYW:z`^3d2
+IGBUJ7W2OI5<PodBFX1fEj2
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/I_term.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/I_term.sv
+!i122 677
+L0 1 41
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/I_term.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/I_term.sv|
+!i113 0
+R16
+R8
+n@i_term
+vinert_intf
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inert_intf.sv
+R10
+R11
+!i10b 1
+!s100 V05a17df>1DfnWmfL:_d;1
+IC8[`=Yj?F>h<KaO]He5U<1
+S1
+R2
+Z17 w1777218215
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inert_intf.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inert_intf.sv
+!i122 678
+L0 7 176
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inert_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inert_intf.sv|
+!i113 0
+R16
+R8
+vinertial_integrator
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inertial_integrator.sv
+R10
+R11
+!i10b 1
+!s100 zFCz=?KO7bL<jUEdR_Y6D0
+IZ3J5TI8JP1i?gcJfl<mJ[1
+S1
+R2
+R17
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inertial_integrator.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inertial_integrator.sv
+!i122 679
+L0 1 216
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inertial_integrator.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/inertial_integrator.sv|
+!i113 0
+R16
+R8
+vinverse_PWM12e
+Z18 2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RunnerPhysics.sv
+R10
+Z19 !s110 1777320070
+!i10b 1
+!s100 L6D;VIN?X[PX9kGa]9bX<3
+I:CDU`0c53RG_A[bSK<c1_0
+S1
+R2
+R12
+Z20 8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RunnerPhysics.sv
+Z21 F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RunnerPhysics.sv
+!i122 692
+L0 365 49
+R13
+R14
+r1
+!s85 0
+31
+Z22 !s108 1777320070.000000
+Z23 !s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RunnerPhysics.sv|
+Z24 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RunnerPhysics.sv|
+!i113 0
+R16
+R8
+ninverse_@p@w@m12e
+vIR_math
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/IR_Math.sv
+R10
+R11
+!i10b 1
+!s100 doA]loVPhh27@RdL27dSf0
+Ibj_jWjdB0zJ:?NXFDomV<1
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/IR_Math.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/IR_Math.sv
+!i122 680
+L0 1 42
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/IR_Math.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/IR_Math.sv|
+!i113 0
+R16
+R8
+n@i@r_math
+vmaze_solve
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/maze_solve.sv
+R10
+R11
+!i10b 1
+!s100 8[ORee=jl=[Z9_i3??36n3
+IFOgzX2@nRiaac]IIz@mg60
+S1
+R2
+R17
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/maze_solve.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/maze_solve.sv
+!i122 681
+L0 1 129
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/maze_solve.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/maze_solve.sv|
+!i113 0
+R16
+R8
+vMazeRunner
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner.sv
+R10
+R11
+!i10b 1
+!s100 78UE@>HV7O^n_AQYTcDz^0
+I5@XHPl^@W_dSoHf6<KLF21
+S1
+R2
+w1777313770
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner.sv
+!i122 682
+L0 1 183
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner.sv|
+!i113 0
+R16
+R8
+n@maze@runner
+vMazeRunner_tb
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb2.sv
+R10
+R19
+!i10b 1
+!s100 SjYiSD=mf;@AnB_Xm=BIF0
+I2bmU@MVMcz4lmk0G]T70>1
+S1
+R2
+w1777319633
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb2.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb2.sv
+!i122 700
+L0 1 106
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb2.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MazeRunner_tb2.sv|
+!i113 0
+R16
+R8
+n@maze@runner_tb
+vMtrDrv
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MtrDrv.sv
+R10
+R19
+!i10b 1
+!s100 bT5H[m[8I]hd7l[e[Vj9K1
+I>HT`gzC=GbZLzaHSz?P0P1
+S1
+R2
+w1777259848
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MtrDrv.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MtrDrv.sv
+!i122 684
+L0 1 67
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MtrDrv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/MtrDrv.sv|
+!i113 0
+R16
+R8
+n@mtr@drv
+vnavigate
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/navigate.sv
+R10
+R19
+!i10b 1
+!s100 :hlOUG<>0cYz?h7@=VF5N1
+I]>>Qkm67D:0_cdo62ZaN91
+S1
+R2
+w1777318893
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/navigate.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/navigate.sv
+!i122 685
+L0 1 160
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/navigate.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/navigate.sv|
+!i113 0
+R16
+R8
+vPID
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PID.sv
+R10
+R19
+!i10b 1
+!s100 GSZhoa^[MPH5h2kN`mXE13
+IKzdl;zY<3C:2hNVD6cidG2
+S1
+R2
+w1777259336
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PID.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PID.sv
+!i122 686
+L0 1 69
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PID.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PID.sv|
+!i113 0
+R16
+R8
+n@p@i@d
+vpiezo_drv
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/piezo_drv.sv
+R10
+R19
+!i10b 1
+!s100 jFVIcibDTaChilVhHQBS`0
+IbI]a6IIdZ;SaXVYDfE>301
+S1
+R2
+R17
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/piezo_drv.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/piezo_drv.sv
+!i122 687
+L0 1 424
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/piezo_drv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/piezo_drv.sv|
+!i113 0
+R16
+R8
+vPWM12
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM12.sv
+R10
+R19
+!i10b 1
+!s100 F2WMW7;5CdgUgHI2emXHj3
+ImMRoc7ek[3XNWn1]_oNLX1
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM12.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM12.sv
+!i122 689
+L0 1 51
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM12.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM12.sv|
+!i113 0
+R16
+R8
+n@p@w@m12
+vPWM8
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM8.sv
+R10
+R19
+!i10b 1
+!s100 aNhj:TLFlYB[bX8InPzhO2
+IgjNSJ`jCL<NI9<UEEoRE:0
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM8.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM8.sv
+!i122 688
+L0 1 36
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM8.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/PWM8.sv|
+!i113 0
+R16
+R8
+n@p@w@m8
+vRemoteComm
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RemoteComm.sv
+R10
+R19
+!i10b 1
+!s100 haYfQKF0bUi[J6m?B]N`72
+IK;]e[WMeQ[iM[[a9>GKbl1
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RemoteComm.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RemoteComm.sv
+!i122 690
+Z25 L0 1 92
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RemoteComm.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/RemoteComm.sv|
+!i113 0
+R16
+R8
+n@remote@comm
+vreset_synch
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/reset_synch.sv
+R10
+R19
+!i10b 1
+!s100 aHmj6ToTo]KMgBOPoMbZP1
+I<15jzNX`lVSLS54L<gb^B3
+S1
+R2
+R17
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/reset_synch.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/reset_synch.sv
+!i122 691
+L0 1 21
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/reset_synch.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/reset_synch.sv|
+!i113 0
+R16
+R8
+vRunnerPhysics
+R18
+R10
+R19
+!i10b 1
+!s100 M0`CA0CVfVLJL61WdcC6@0
+I3m<z`H>[8I8mm0DUlDJBR0
+S1
+R2
+R12
+R20
+R21
+!i122 692
+L0 1 360
+R13
+R14
+r1
+!s85 0
+31
+R22
+R23
+R24
+!i113 0
+R16
+R8
+n@runner@physics
+vsensor_intf
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/sensor_intf.sv
+R10
+R19
+!i10b 1
+!s100 @AE0fE]<T4CkQl<I;3JWX2
+IBXnZKNQLh^JSR2ZMX4`Rh3
+S1
+R2
+R17
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/sensor_intf.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/sensor_intf.sv
+!i122 693
+L0 1 370
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/sensor_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/sensor_intf.sv|
+!i113 0
+R16
+R8
+vSPI_ADC128S
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_ADC128S.sv
+R10
+R19
+!i10b 1
+!s100 93oj0i;UV@::cHMPGHMJ>1
+IUj]iHz4iO3>de56NE9X;=2
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_ADC128S.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_ADC128S.sv
+!i122 694
+L0 1 140
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_ADC128S.sv|
+!i113 0
+R16
+R8
+n@s@p@i_@a@d@c128@s
+vSPI_iNEMO4
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_iNEMO4.sv
+R10
+R19
+!i10b 1
+!s100 ;l4P5T7LQK5?fke^m[CPm3
+IPVXGK[1`XUdn_2zoY<ZUd0
+S1
+R2
+w1777307804
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_iNEMO4.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_iNEMO4.sv
+!i122 695
+L0 2 196
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_iNEMO4.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_iNEMO4.sv|
+!i113 0
+R16
+R8
+n@s@p@i_i@n@e@m@o4
+vSPI_main
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_main.sv
+R10
+R19
+!i10b 1
+!s100 hz;JLTDd^f_jJVzMaY2C[0
+I@A^Wzn@jd^n]TP3Qo_:Tf1
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_main.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_main.sv
+!i122 696
+L0 1 125
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_main.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/SPI_main.sv|
+!i113 0
+R16
+R8
+n@s@p@i_main
+vUART_rx
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_rx.sv
+R10
+R19
+!i10b 1
+!s100 Ug=86@o8X?i[VCoJ^I@`L1
+INBVNQommJ>`OjZX_9PjDS3
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_rx.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_rx.sv
+!i122 697
+L0 1 128
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_rx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_rx.sv|
+!i113 0
+R16
+R8
+n@u@a@r@t_rx
+vUART_tx
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_tx.sv
+R10
+R19
+!i10b 1
+!s100 WVS:E5XWkWUaJ^T@nHVj21
+IWC_DJ]BdSBN=L<GoUhc?@0
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_tx.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_tx.sv
+!i122 698
+R25
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_tx.sv|
+!i113 0
+R16
+R8
+n@u@a@r@t_tx
+vUART_wrapper
+2/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_wrapper.sv
+R10
+R19
+!i10b 1
+!s100 SeZC[_b>mhEKA:l01zYDQ1
+IoPVFP`G[b70^kZ=@>81fo3
+S1
+R2
+R12
+8/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_wrapper.sv
+F/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_wrapper.sv
+!i122 699
+L0 1 93
+R13
+R14
+r1
+!s85 0
+31
+R22
+!s107 /filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_wrapper.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/a/ashebani/ECE551/551_Project-main/551_Project/project_synthesis/ProjectDir/UART_wrapper.sv|
+!i113 0
+R16
+R8
+n@u@a@r@t_wrapper
