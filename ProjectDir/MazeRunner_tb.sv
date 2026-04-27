@@ -53,6 +53,8 @@ module MazeRunner_tb();
 
 					 
   initial begin
+    //Monitor relevant signals
+    $monitor("Time: %0t | cmd: %h | resp: %h | lftPWM: %b%b | rghtPWM: %b%b | hall_n: %b | strt_hdng: %b | strt_mv: %b | mv_cmplt: %b", $time, cmd, resp, lftPWM1, lftPWM2, rghtPWM1, rghtPWM2, hall_n, iDUT.strt_hdng, iDUT.strt_mv, iDUT.mv_cmplt);
     clk = 0;
   /// Your magic goes here ///
     @(negedge clk);

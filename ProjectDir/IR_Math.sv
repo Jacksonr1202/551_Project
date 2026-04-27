@@ -16,13 +16,9 @@ module IR_math #(
   logic signed [12:0] p_term, d_term, corr;
   logic signed [12:0] sum13;
 
-  logic signed [12:0] dsrd_hdng_flop;
-  logic signed [12:0] corr_flop;
-
   assign lft13  = $signed({1'b0, lft_IR});
   assign rght13 = $signed({1'b0, rght_IR});
   assign nom13  = $signed({1'b0, NOM_IR});
-  assign dsrd_hdng_13 = $signed(dsrd_hdng);
 
   assign diff_full = lft13 - rght13;
 
@@ -35,15 +31,7 @@ module IR_math #(
   assign p_term = (ir_diff >>> 5);
   assign d_term = ($signed({{4{IR_Dtrm[8]}}, IR_Dtrm}) <<< 2);
 
-  always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-      corr_flop      <= 13'sd0;
-      dsrd_hdng_flop <= 13'sd0;
-    end else begin
-      corr_flop      <= en_fusion ? ((p_term + d_term) >>> 1) : 13'sd0;
-      dsrd_hdng_flop <= $signed({dsrd_hdng[11], dsrd_hdng});
-    end
-  end
+  assign corr  = en_fusion ? ((p_term + d_term) >>> 1) : 13'sd0;
   assign sum13 = $signed({dsrd_hdng[11], dsrd_hdng}) + corr;
 
   assign dsrd_hdng_adj =

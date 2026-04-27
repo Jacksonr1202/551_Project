@@ -13,9 +13,6 @@ logic signed [9:0] mux2out;
 logic signed [9:0] ff2out;
 logic signed [10:0] D_diff;
 logic signed [7:0] D_diff_sat;
-logic signed [7:0] D_diff_sat_r;
-logic signed [12:0] D_term_nxt;
-logic hdng_vld_r;
 
 
 //first mux - ff block
@@ -52,26 +49,6 @@ always_comb begin
 end
 
 //signed multiply
-assign D_term_nxt = D_diff_sat_r * D_COEFF;
-
-// Pipeline saturated derivative input so multiplier path is isolated.
-always_ff@(posedge clk, negedge rst_n) begin
-    if(!rst_n) begin
-        D_diff_sat_r <= 8'sh00;
-        hdng_vld_r <= 1'b0;
-    end else begin
-        hdng_vld_r <= hdng_vld;
-        if(hdng_vld)
-            D_diff_sat_r <= D_diff_sat;
-    end
-end
-
-// Register D-term output to cut long combinational path into PID/MtrDrv.
-always_ff@(posedge clk, negedge rst_n) begin
-    if(!rst_n)
-	    D_term <= 13'sh0000;
-    else if(hdng_vld_r)
-	    D_term <= D_term_nxt;
-end
+assign D_term = D_diff_sat * D_COEFF;
 
 endmodule

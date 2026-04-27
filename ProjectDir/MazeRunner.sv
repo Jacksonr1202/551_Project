@@ -17,7 +17,7 @@ module MazeRunner(
   output [7:0] LED
 );
  
-  localparam FAST_SIM = 0;
+  localparam FAST_SIM = 1;
   localparam NOM_IR = 12'h900;			// was 0x9E0
 
   ////////////////////////
@@ -32,6 +32,8 @@ module MazeRunner(
   wire signed [11:0] dsrd_hdng_slv;		// desired heading from solver
   wire signed [11:0] dsrd_hdng;			// muxed desired heading to navigate
   wire signed [11:0] dsrd_hdng_adj;		// adjusted by IR readings
+  logic signed [11:0] dsrd_hdng_adj_piped;	// pipelined version of dsrd_hdng_adj
+  logic signed [11:0] lft_spd_piped, rght_spd_piped;	// pipelined motor speeds
   wire strt_hdng_cmd,strt_hdng_slv;		// commands navigate unit to establish new heading (cmd_md or solver)
   wire strt_mv_cmd,strt_mv_slv;			// commands navigate unit to start new move (cmd_md or solver)
   wire strt_mv,strt_hdng;				// actual muxed start signals
@@ -56,24 +58,8 @@ module MazeRunner(
   wire clr_cmd_rdy;						// asserted to mark command as processed
   wire batt_low;
   wire cmd_md;							// asserted by default, lowered when maze solve command issued
-  reg signed [11:0] dsrd_hdng_adj_r;
-  logic signed [8:0] IR_Dtrm_flop;
   
   assign sol_cmplt = ~hall_n;			// hall effect sensor is active low
-
-  always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n)
-      dsrd_hdng_adj_r <= 12'sd0;
-    else
-      dsrd_hdng_adj_r <= dsrd_hdng_adj;
-  end
-
-  always_ff @(posedge clk or negedge rst_n) begin
-  if (!rst_n)
-    IR_Dtrm_flop <= 9'h000;
-  else
-    IR_Dtrm_flop <= IR_Dtrm; // Catch the signal here to break the path
-  end
   
   /////////////////////////////////////
   // Instantiate reset synchronizer //
@@ -134,7 +120,7 @@ module MazeRunner(
   // Instantiate inertial interface //
   ///////////////////////////////////
   inert_intf #(FAST_SIM) iNEMO(.clk(clk),.rst_n(rst_n),.strt_cal(strt_cal),
-             .cal_done(cal_done),.heading(actl_hdng),.rdy(hdng_rdy),.IR_Dtrm(IR_Dtrm_flop),  // IR_Dtrm
+             .cal_done(cal_done),.heading(actl_hdng),.rdy(hdng_rdy),.IR_Dtrm(IR_Dtrm),  // IR_Dtrm
 			 .SS_n(INRT_SS_n),.SCLK(INRT_SCLK),.MOSI(INRT_MOSI),.MISO(INRT_MISO),
 			 .INT(INRT_INT),.moving(moving),.en_fusion(en_fusion));
   
@@ -142,21 +128,36 @@ module MazeRunner(
   // Instantiate IR_Math which adjust desired heading based on IR readings //
   //////////////////////////////////////////////////////////////////////////
   IR_math #(NOM_IR) iIR_adj(.lft_opn(lft_opn),.rght_opn(rght_opn),.lft_IR(lft_IR),.rght_IR(rght_IR),
-                            .IR_Dtrm(IR_Dtrm_flop),.en_fusion(en_fusion),.dsrd_hdng(dsrd_hdng),
+                            .IR_Dtrm(IR_Dtrm),.en_fusion(en_fusion),.dsrd_hdng(dsrd_hdng),
 				            .dsrd_hdng_adj(dsrd_hdng_adj));
+
+  // Pipeline stage 1: register dsrd_hdng_adj to break path after IR_Math (~1.15 ns)
+  always_ff @(posedge clk, negedge rst_n)
+    if (!rst_n) dsrd_hdng_adj_piped <= 12'h800;
+    else        dsrd_hdng_adj_piped <= dsrd_hdng_adj;
     
   /////////////////////////////////
   // Instantiate PID controller //
   ///////////////////////////////			 
-  PID iCNTRL(.clk(clk),.rst_n(rst_n),.moving(moving),.dsrd_hdng(dsrd_hdng_adj_r),.actl_hdng(actl_hdng),
+  PID iCNTRL(.clk(clk),.rst_n(rst_n),.moving(moving),.dsrd_hdng(dsrd_hdng_adj_piped),.actl_hdng(actl_hdng),
              .hdng_vld(hdng_rdy),.at_hdng(at_hdng),.frwrd_spd(frwrd_spd),.lft_spd(lft_spd),
 			 .rght_spd(rght_spd));
+
+  // Pipeline stage 2: register PID outputs to break path before MtrDrv multiply (~1.63 ns)
+  always_ff @(posedge clk, negedge rst_n)
+    if (!rst_n) begin
+      lft_spd_piped  <= 12'h000;
+      rght_spd_piped <= 12'h000;
+    end else begin
+      lft_spd_piped  <= lft_spd;
+      rght_spd_piped <= rght_spd;
+    end
 					 
   
   ///////////////////////////////////
   // Instantiate motor PWM driver //
   /////////////////////////////////  
-  MtrDrv iMTR(.clk(clk),.rst_n(rst_n),.lft_spd(lft_spd),.rght_spd(rght_spd),
+  MtrDrv iMTR(.clk(clk),.rst_n(rst_n),.lft_spd(lft_spd_piped),.rght_spd(rght_spd_piped),
               .vbatt(vbatt),.lftPWM1(lftPWM1),.lftPWM2(lftPWM2),
 				  .rghtPWM1(rghtPWM1),.rghtPWM2(rghtPWM2));
 			   

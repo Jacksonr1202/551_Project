@@ -71,9 +71,6 @@ module sensor_intf(clk,rst_n,IR_lft_en,IR_cntr_en,IR_rght_en,lft_IR,
   reg [11:0] lft_off_reg,rght_off_reg;		// hold offset calibration
   reg [14:0] lft_accum,rght_accum;			// registers to accumulate average of 8
   reg [3:0] smpl_cnt;
-  reg signed [8:0] lft_IR_Dtrm_r,rght_IR_Dtrm_r;
-  reg signed [9:0] IR_Dtrm_sum_r;
-  reg lft_opn_r,rght_opn_r;
 
   localparam OPEN_THRES = 12'hD30;
   localparam OPEN_THRES_FRNT = 12'hDC0;
@@ -177,23 +174,14 @@ module sensor_intf(clk,rst_n,IR_lft_en,IR_cntr_en,IR_rght_en,lft_IR,
   ///////////////////////////////////////////////////////////// 
   assign IR_Dtrm_sum = {lft_IR_Dtrm[8],lft_IR_Dtrm} - {rght_IR_Dtrm[8],rght_IR_Dtrm};
 
-  // Pipeline IR derivative terms and open flags before final IR_Dtrm register.
-  always_ff @(posedge clk) begin
-    lft_IR_Dtrm_r <= lft_IR_Dtrm;
-    rght_IR_Dtrm_r <= rght_IR_Dtrm;
-    IR_Dtrm_sum_r <= IR_Dtrm_sum;
-    lft_opn_r <= lft_opn;
-    rght_opn_r <= rght_opn;
-  end
-
   /////////////////////////////////////////////////////
   // Need to pipeline (flop) IR_Dtrm for timing reasons //
   ///////////////////////////////////////////////////////
   always_ff @(posedge clk)
-    IR_Dtrm <= ((lft_opn_r) && (rght_opn_r)) ? 9'h000 :		// if no IR run with no fusion
-              (lft_opn_r) ? ~{rght_IR_Dtrm_r[8],rght_IR_Dtrm_r[8:1]} :				// based on right if left is bad
-	      (rght_opn_r) ? {lft_IR_Dtrm_r[8],lft_IR_Dtrm_r[8:1]} :				// based on lft if rght is bad
-	      IR_Dtrm_sum_r[9:1];
+    IR_Dtrm = ((lft_opn) && (rght_opn)) ? 9'h000 :		// if no IR run with no fusion
+              (lft_opn) ? ~{rght_IR_Dtrm[8],rght_IR_Dtrm[8:1]} :				// based on right if left is bad
+	      (rght_opn) ? {lft_IR_Dtrm[8],lft_IR_Dtrm[8:1]} :				// based on lft if rght is bad
+	      IR_Dtrm_sum[9:1];
 						  
   ///////////////////////////
   // Implement state flop //

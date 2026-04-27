@@ -21,12 +21,9 @@ logic signed [14:0] I_term_ext;
 logic signed [14:0] D_term_ext;
 logic signed [14:0] PID_out;
 logic signed [11:0] PID_out_div8;
-logic signed [11:0] pid_corr_r;
 logic signed [11:0] spd_ext;
 logic signed [11:0] lft_pid;
 logic signed [11:0] rght_pid;
-logic [11:0] lft_spd_nxt;
-logic [11:0] rght_spd_nxt;
 localparam logic signed [3:0] P_COEFF = 4'h0003;
 
 //calculate err_sat
@@ -55,35 +52,15 @@ assign D_term_ext = D_term;
 assign PID_out = P_term_ext + I_term_ext + D_term_ext;
 assign PID_out_div8 = PID_out[14:3];
 
-// Pipeline PID correction term to break long add chain before speed output flops.
-always_ff@(posedge clk, negedge rst_n) begin
-    if(!rst_n)
-        pid_corr_r <= 12'sh000;
-    else
-        pid_corr_r <= PID_out_div8;
-end
-
 //calculate right and left adjusted speeds
 //assign spd_ext = {frwrd_spd[10], frwrd_spd};
 assign spd_ext = {1'b0, frwrd_spd};
-assign lft_pid = spd_ext + pid_corr_r;
-assign rght_pid = spd_ext - pid_corr_r;
+assign lft_pid = spd_ext + PID_out_div8;
+assign rght_pid = spd_ext - PID_out_div8;
 
 //assign if moving, otherwise 0
-assign lft_spd_nxt = (moving) ? lft_pid : 12'h000;
-assign rght_spd_nxt = (moving) ? rght_pid : 12'h000;
-
-// Register PID outputs to break long path into MtrDrv multiplier/PWM logic.
-always_ff@(posedge clk, negedge rst_n) begin
-    if(!rst_n) begin
-        lft_spd <= 12'h000;
-        rght_spd <= 12'h000;
-    end
-    else begin
-        lft_spd <= lft_spd_nxt;
-        rght_spd <= rght_spd_nxt;
-    end
-end
+assign lft_spd = (moving) ? lft_pid : 12'h000;
+assign rght_spd = (moving) ? rght_pid : 12'h000;
 
 //check if at heading
 assign at_hdng = ((err_sat[9] == 1'b0 && err_sat < 10'd30) || (err_sat[9] == 1'b1 && err_sat > 10'b1111100010)) ? 1'b1 : 1'b0;

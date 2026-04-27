@@ -34,6 +34,7 @@ module navigate(clk,rst_n,strt_hdng,strt_mv,stp_lft,stp_rght,mv_cmplt,hdng_rdy,m
   // Delayed versions of IR sensor inputs for edge detection
   logic lft_opn_d, rght_opn_d; 
   logic lft_rise, rght_rise;
+  logic was_hdng_init;
   
   ////////////////////////////////
   // Now form forward register //
@@ -75,7 +76,7 @@ dec_frwrd_fast = 0;
   end
   HDNG : begin
     moving = 1;
-    if(at_hdng) begin
+    if(at_hdng && !was_hdng_init) begin
       mv_cmplt = 1;
       nxt_state = IDLE;  
     end
@@ -137,6 +138,13 @@ always_ff @(posedge clk, negedge rst_n) begin
     state <= IDLE;
   else
     state <= nxt_state;
+end
+
+always_ff @(posedge clk, negedge rst_n) begin
+  if(!rst_n)
+    was_hdng_init <= 1'b0;
+  else
+    was_hdng_init <= (state == HDNG_INIT);
 end
 
 //Assert en_fusion if frwrd_spd is greater than 1/2 max speed, allowing IR readings to affect nav decisions only when moving at decent speed.
