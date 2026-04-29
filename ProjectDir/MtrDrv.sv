@@ -18,10 +18,12 @@ logic signed [11:0] lft_scaled;
 logic signed [11:0] rght_scaled;
 logic [11:0] lft_final;
 logic [11:0] rght_final;
+logic [11:0] lft_final_piped;
+logic [11:0] rght_final_piped;
 
 DutyScaleROM scaleROM(.clk(clk),.batt_level(vbatt[9:4]),.scale(scale_factor));
-PWM12 lPWM(.clk(clk),.rst_n(rst_n),.duty(lft_final),.PWM1(lftPWM1),.PWM2(lftPWM2));
-PWM12 rPWM(.clk(clk),.rst_n(rst_n),.duty(rght_final),.PWM1(rghtPWM1),.PWM2(rghtPWM2));
+PWM12 lPWM(.clk(clk),.rst_n(rst_n),.duty(lft_final_piped),.PWM1(lftPWM1),.PWM2(lftPWM2));
+PWM12 rPWM(.clk(clk),.rst_n(rst_n),.duty(rght_final_piped),.PWM1(rghtPWM1),.PWM2(rghtPWM2));
 
 
 //scale speed then divide by 2048 and saturate to 12 bits
@@ -41,6 +43,16 @@ assign rght_scaled =
 //generate PWM signals
 assign lft_final = lft_scaled + 12'h800;
 assign rght_final = 12'h800 - rght_scaled;
+
+// Pipeline duty inputs to PWM to break long mult->PWM path.
+always_ff @(posedge clk or negedge rst_n)
+    if (!rst_n) begin
+        lft_final_piped  <= 12'h800;
+        rght_final_piped <= 12'h800;
+    end else begin
+        lft_final_piped  <= lft_final;
+        rght_final_piped <= rght_final;
+    end
 
 
 endmodule

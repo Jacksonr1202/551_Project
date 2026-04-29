@@ -1,13 +1,6 @@
-// MazeRunner_synth_regression_tb.sv
-// Self-checking full-system regression for ECE551 MazeRunner.
-// Drop this next to ProjectDir files and compile in place of MazeRunner_tb.sv.
-// For post-synthesis, compile MazeRunner.vg instead of MazeRunner.sv and keep
-// the behavioral support models: RemoteComm.sv, RunnerPhysics.sv, SPI_iNEMO4.sv,
-// ADC128S_FC.sv, SPI_ADC128S.sv, inverse PWM helpers, and the std-cell libraries.
-
 `timescale 1ns/1ps
 
-module MazeRunner_synth_regression_tb();
+module Real_MazeRunner_tb();
   localparam int CLK_HALF_NS       = 5;
   localparam int BOOT_CYCLES       = 20000;
   localparam int UART_TIMEOUT      = 2500000;
@@ -212,6 +205,17 @@ module MazeRunner_synth_regression_tb();
     end
   endtask
 
+  task automatic test_maze_solve_left();
+    begin 
+      //Send maze solve command
+      send_command(16'h6001, "maze solve");
+      `WAIT_UNTIL(iDUT.cmd_md == 0, TURN_TIMEOUT * 2, "cmd_proc did not switch to maze solve mode");
+      pass("cmd_proc switched to maze solve mode");
+      `WAIT_UNTIL(iDUT.sol_cmplt, TURN_TIMEOUT * 10, "maze solver did not assert sol_cmplt after maze solve command");
+      pass("maze solver found the magnet and asserted sol_cmplt");
+    end
+  endtask
+
   initial begin
     $display("\n=== MazeRunner synth-oriented full-system regression ===");
     reset_dut();
@@ -220,6 +224,9 @@ module MazeRunner_synth_regression_tb();
     test_turn_west();
     test_turn_east();
     test_move_forward_abbreviated();
+    //Monitor signals from physics model
+    //$monitor("Time: %0t | cmd: %h | resp: %h | lftPWM: %b%b | rghtPWM: %b%b | strt_hdng: %b | strt_mv: %b | mv_cmplt: %b", $time, cmd, resp, lftPWM1, lftPWM2, rghtPWM1, rghtPWM2, iDUT.strt_hdng, iDUT.strt_mv, iDUT.mv_cmplt);
+    test_maze_solve_left();
     $display("\nALL TESTS PASSED: %0d checks, %0d failures", tests_run, tests_failed);
     $stop;
   end

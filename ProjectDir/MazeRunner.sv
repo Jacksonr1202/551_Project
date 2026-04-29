@@ -167,8 +167,8 @@ module MazeRunner(
   sensor_intf #(FAST_SIM,NOM_IR) iIR(.clk(clk),.rst_n(rst_n),
                           .IR_lft_en(IR_lft_en),.strt_cal(strt_cal),
                           .IR_cntr_en(IR_cntr_en),.IR_rght_en(IR_rght_en),
-						  .lft_IR(lft_IR),.rght_IR(rght_IR),.IR_Dtrm(IR_Dtrm),
-						  .vbatt(vbatt),.lft_opn(lft_opn),.rght_opn(rght_opn),
+              .lft_IR(lft_IR),.rght_IR(rght_IR),.IR_Dtrm(IR_Dtrm),
+              .vbatt(vbatt),.lft_opn(lft_opn),.rght_opn(rght_opn),
 						  .frwrd_opn(frwrd_opn),.batt_low(batt_low),
 						  .A2D_SS_n(A2D_SS_n),.A2D_SCLK(A2D_SCLK),
 						  .A2D_MOSI(A2D_MOSI),.A2D_MISO(A2D_MISO),.LED());

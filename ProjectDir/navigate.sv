@@ -93,10 +93,7 @@ nxt_state = state;
     if(~frwrd_opn) begin
       nxt_state = MV_STOP_FAST;
     end
-    else if(stp_lft && lft_rise) begin
-      nxt_state = MV_STOP;
-    end
-    else if(stp_rght && rght_rise) begin
+    else if((stp_lft && lft_rise) || (stp_rght && rght_rise)) begin
       nxt_state = MV_STOP;
     end
   end

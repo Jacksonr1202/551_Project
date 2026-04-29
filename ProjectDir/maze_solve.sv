@@ -79,7 +79,7 @@ always_comb begin
             if(sol_cmplt) begin
                 next_state = IDLE;
             end 
-            else if (mv_cmplt || ((cmd0) ? lft_opn : rght_opn)) begin
+            else if (mv_cmplt) begin
                 next_state = START_HEADING;
                 // Choose turn direction from actual openings.
                 // If both are open, cmd0 selects preference: 1=left, 0=right.
