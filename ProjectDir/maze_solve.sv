@@ -55,11 +55,13 @@ end
 always_comb begin
     // Default outputs
     strt_hdng = 0;
-    dsrd_hdng_next = 12'b0;
+    dsrd_hdng_next = dsrd_hdng;
     strt_mv = 0;
     stp_lft = 0;
     stp_rght = 0;
     next_state = state;
+    stp_lft = cmd0;
+    stp_rght = ~cmd0;
     case (state)
         IDLE: begin
             if (!cmd_md) begin
@@ -71,47 +73,54 @@ always_comb begin
             next_state = MOVE_UNTIL_OPN;
         end
         MOVE_UNTIL_OPN: begin
-            stp_lft = cmd0 ? 1 : 0;
-            stp_rght = cmd0 ? 0 : 1;
+            // Stop on either opening; cmd0 is only a preference when both sides are open.
+            //stp_lft = cmd0;
+            //stp_rght = ~cmd0;
             if(sol_cmplt) begin
                 next_state = IDLE;
             end 
-            else if(mv_cmplt) begin
+            else if (mv_cmplt || ((cmd0) ? lft_opn : rght_opn)) begin
                 next_state = START_HEADING;
-                if(lft_opn || rght_opn) begin
-                    case(cmd0)
-                        0: begin
-                            // If right is open, turn right. Use current heading to determine new desired heading
-                            if(rght_opn) begin
-                            case(dsrd_hdng)
-                                NORTH: dsrd_hdng_next = EAST;
-                                EAST:  dsrd_hdng_next = SOUTH;
-                                SOUTH: dsrd_hdng_next = WEST;
-                                WEST:  dsrd_hdng_next = NORTH;
-                            endcase
-                            end
-                        end
-                        1: begin
-                            // If left is open, turn left. Use current heading to determine new desired heading
-                            if(lft_opn) begin
-                            case(dsrd_hdng)
-                                NORTH: dsrd_hdng_next = WEST;
-                                EAST:  dsrd_hdng_next = NORTH;
-                                SOUTH: dsrd_hdng_next = EAST;
-                                WEST:  dsrd_hdng_next = SOUTH;
-                            endcase
-                            end
-                        end
+                // Choose turn direction from actual openings.
+                // If both are open, cmd0 selects preference: 1=left, 0=right.
+                if (lft_opn && rght_opn) begin
+                    if (cmd0) begin
+                        case(dsrd_hdng)
+                            NORTH: dsrd_hdng_next = WEST;
+                            EAST:  dsrd_hdng_next = NORTH;
+                            SOUTH: dsrd_hdng_next = EAST;
+                            WEST:  dsrd_hdng_next = SOUTH;
+                        endcase
+                    end else begin
+                        case(dsrd_hdng)
+                            NORTH: dsrd_hdng_next = EAST;
+                            EAST:  dsrd_hdng_next = SOUTH;
+                            SOUTH: dsrd_hdng_next = WEST;
+                            WEST:  dsrd_hdng_next = NORTH;
+                        endcase
+                    end
+                end else if (lft_opn) begin
+                    case(dsrd_hdng)
+                        NORTH: dsrd_hdng_next = WEST;
+                        EAST:  dsrd_hdng_next = NORTH;
+                        SOUTH: dsrd_hdng_next = EAST;
+                        WEST:  dsrd_hdng_next = SOUTH;
                     endcase
-                end
-                else begin
-                case(dsrd_hdng)
-                    //Turn around if both paths are blocked
-                    NORTH: dsrd_hdng_next = SOUTH;
-                    EAST:  dsrd_hdng_next = WEST;
-                    SOUTH: dsrd_hdng_next = NORTH;
-                    WEST:  dsrd_hdng_next = EAST;
-                endcase
+                end else if (rght_opn) begin
+                    case(dsrd_hdng)
+                        NORTH: dsrd_hdng_next = EAST;
+                        EAST:  dsrd_hdng_next = SOUTH;
+                        SOUTH: dsrd_hdng_next = WEST;
+                        WEST:  dsrd_hdng_next = NORTH;
+                    endcase
+                end else begin
+                    // Turn around if both paths are blocked.
+                    case(dsrd_hdng)
+                        NORTH: dsrd_hdng_next = SOUTH;
+                        EAST:  dsrd_hdng_next = WEST;
+                        SOUTH: dsrd_hdng_next = NORTH;
+                        WEST:  dsrd_hdng_next = EAST;
+                    endcase
                 end
             end 
         end
